@@ -77,6 +77,7 @@
 <body class="{% if customer %}customer-logged-in{% endif %} sidebar-{% if sidebar %}enabled{% else %}disabled{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
 
   {% section 'promobar' %}
+  {% section 'header' %}
   <div class="main-content-wrapper">
   <button class="Button Button--main">Add To Cart</button>
     {% unless template contains 'index' %}

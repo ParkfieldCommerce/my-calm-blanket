@@ -1,129 +1,41 @@
-<header>
-  this is the header
+<header class="Header">
+  <div class="Header__section Header__section--logo"></div>
+  <div class="Header__section Header__section--nav">
+    <nav>
+      <ul>
+        {% for link in linklists['main-menu'].links %}
+        <li><a href="{{link.url}}">{{link.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+  <div class="Header__section Header__section--account">
+    <img src="{{section.settings.designed_image | img_url:'master'}}" alt="{{section.settings.designed_image.alt}}">
+  </div>
 </header>
 {% schema %}
 {
   "name": "Header",
-  "max_blocks": 3,
   "settings": [
     {
-      "type": "checkbox",
-      "id": "show-payment-options",
-      "label": "Enable payment icons",
-      "default": true
-    }
-  ],
-  "blocks": [
-    {
-      "type": "menus",
-      "name": "Menus",
-      "settings": [
-        {
-          "type": "link_list",
-          "id": "footer-link-list-1",
-          "label": "Menu 1"
-        },
-        {
-          "type": "link_list",
-          "id": "footer-link-list-2",
-          "label": "Menu 2"
-        }
-      ],
-      "limit": 1
+      "type": "image_picker",
+      "id": "logo",
+      "label": "logo"
     },
     {
-      "type": "featured-content",
-      "name": "Rich text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "richtext",
-          "id": "footer-text-box",
-          "label": "Text"
-        }
-      ],
-      "limit": 1
+      "type":"header",
+      "content":"Designed In"
     },
     {
-      "type": "tweet",
-      "name": "Twitter feed",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "text",
-          "id": "twitter-id",
-          "label": "Username",
-          "info": "Note: Don't include the '@' symbol."
-        },
-        {
-          "type": "checkbox",
-          "id": "twitter-retweets",
-          "label": "Show retweets"
-        }
-      ],
-      "limit": 1
+      "type":"text",
+      "id":"designed_text",
+      "label":"Text",
+      "default":"Designed in the US"
     },
     {
-      "type": "instagram",
-      "name": "Instagram feed",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "text",
-          "id": "instagram-access-token",
-          "label": "Access token ([?](http:\/\/instagram.pixelunion.net))"
-        },
-        {
-          "type": "select",
-          "id": "instagram-count",
-          "label": "Number of images",
-          "options": [
-            {
-              "value": "3",
-              "label": "3"
-            },
-            {
-              "value": "6",
-              "label": "6"
-            }
-          ]
-        }
-      ],
-      "limit": 1
-    },
-    {
-      "type": "connect",
-      "name": "Newsletter / social links",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "checkbox",
-          "id": "enable-mailing-list",
-          "label": "Enable newsletter"
-        },
-        {
-          "type": "checkbox",
-          "id": "enable-social-links",
-          "label": "Enable social links"
-        }
-      ],
-      "limit": 1
+      "type":"image_picker",
+      "id":"designed_image",
+      "label":"Image"
     }
   ]
 }
