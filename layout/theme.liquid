@@ -42,6 +42,7 @@
 
   <!-- Theme CSS -->
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'app.scss.css' | asset_url | stylesheet_tag }}
 
   <!-- Third Party JS Libraries -->
   {{ 'jquery-1.11.1.min.js' | asset_url | script_tag }}
@@ -75,9 +76,9 @@
 
 <body class="{% if customer %}customer-logged-in{% endif %} sidebar-{% if sidebar %}enabled{% else %}disabled{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
 
-
+  {% section 'promobar' %}
   <div class="main-content-wrapper">
-
+  <button class="Button Button--main">Add To Cart</button>
     {% unless template contains 'index' %}
       <div class="page-header">
         {% include 'page-header' %}

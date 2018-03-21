@@ -1,0 +1,43 @@
+<!-- sections/products.liquid -->
+<div class="Promobar">
+  <p class="Promobar__text">{{section.settings.text}}</p>
+  <button class="Promobar__close">x</button>
+</div>
+<style>
+  .Promobar{
+    background: {{section.settings.bg_color}};
+    color: {{section.settings.text_color}};
+  }
+</style>
+{% schema %}
+  {
+    "name": "Promobar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Text Content"
+      },
+      {
+        "id":"text",
+        "type":"textarea",
+        "label":"Text"
+      },
+      {
+        "type":"header",
+        "content":"Styling"
+      },
+      {
+        "type":"color",
+        "id":"bg_color",
+        "label":"Background Color",
+        "default":"#A0DAE8"
+      },
+      {
+        "type":"color",
+        "id":"text_color",
+        "label":"Text Color",
+        "default":"#333E48"
+      }
+    ]
+  }
+{% endschema %}
