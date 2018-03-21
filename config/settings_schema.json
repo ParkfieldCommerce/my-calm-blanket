@@ -1228,46 +1228,6 @@
     ]
   },
   {
-    "name": "Sidebar",
-    "settings": [
-      {
-        "type": "select",
-        "id": "enable-sidebar",
-        "label": "Enable sidebar",
-        "info": "The \"all\" option denotes the Home page, Collections List page, and Collection pages.",
-        "options": [
-          {
-            "value": "all",
-            "label": "All pages"
-          },
-          {
-            "value": "not-home",
-            "label": "All except home page"
-          },
-          {
-            "value": "none",
-            "label": "Disabled"
-          }
-        ]
-      },
-      {
-        "type": "link_list",
-        "id": "sidebar-link-list-1",
-        "label": "Menu 1"
-      },
-      {
-        "type": "link_list",
-        "id": "sidebar-link-list-2",
-        "label": "Menu 2"
-      },
-      {
-        "type": "link_list",
-        "id": "sidebar-link-list-3",
-        "label": "Menu 3"
-      }
-    ]
-  },
-  {
     "name": "Product grid",
     "settings": [
       {

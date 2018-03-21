@@ -75,7 +75,6 @@
 
 <body class="{% if customer %}customer-logged-in{% endif %} sidebar-{% if sidebar %}enabled{% else %}disabled{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
 
-  {% section 'header' %}
 
   <div class="main-content-wrapper">
 
@@ -88,14 +87,8 @@
     <div class="main-content">
       {{ content_for_layout }}
     </div>
-
-    {% if sidebar %}
-      {% include 'sidebar' %}
-    {% endif %}
   </div>
 
-  {% section 'promotions' %}
-  {% section 'footer' %}
 
   <!-- Scripts -->
 

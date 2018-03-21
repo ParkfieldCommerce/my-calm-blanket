@@ -1,64 +1,6 @@
-<div data-section-id="{{ section.id }}" data-section-type="footer">
-
-  {% assign modulesCount = 0 %}
-  {% for block in section.blocks %}
-    {% assign modulesCount = modulesCount | plus: 1 %}
-  {% endfor %}
-
-  <div class="main-footer-wrapper">
-    <footer class="main-footer {% if modulesCount > 0 %}has-border{% endif %}">
-
-      {% if modulesCount > 0 %}
-        <div class="footer-modules showing-{{ modulesCount }}-modules">
-          {% for block in section.blocks %}
-            {%- case block.type -%}
-              {%- when 'menus' -%}
-                {% include 'footer-link-lists' %}
-              {%- when 'featured-content' -%}
-                {% include 'footer-text-box' %}
-              {%- when 'tweet' -%}
-                {% include 'footer-tweet' %}
-              {%- when 'instagram' -%}
-                {% include 'footer-instagram' %}
-              {%- when 'connect' -%}
-                {% include 'footer-connect' %}
-            {% endcase %}
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      <div class="copyright">
-        {% capture year %}
-          {{ "now" | date: "%Y" }}
-        {% endcapture %}
-
-        {% capture shopName %}{{ shop.name | link_to: '/' }}{% endcapture %}
-
-        {% include 'currency-switcher' with 'header' %}
-
-        <p role="contentinfo">
-          {{ 'layout.footer.copyright_html' | t: year: year, shop_name: shopName }}
-          <br>
-          <a href="https://www.pixelunion.net/">Pacific theme by Pixel Union</a>. {{ powered_by_link }}.
-        </p>
-
-        {% include 'payment-icons' %}
-      </div>
-
-    </footer>
-  </div>
-
-  <div class="modal-wrapper">
-    <div class="modal-content">
-      <h2 class="modal-title"></h2>
-
-      <div class="modal-message rte"></div>
-
-      <span class="modal-close modal-close-secondary">{{ 'general.general.close' | t }}</span>
-    </div>
-  </div>
-
-</div>
+<footer>
+  this is the footer
+</footer>
 
 {% schema %}
 {

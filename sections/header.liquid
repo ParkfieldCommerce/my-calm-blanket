@@ -1,189 +1,129 @@
-<div data-section-id="{{ section.id }}" data-section-type="header">
-
-  {%- assign logo = section.settings.image -%}
-  {%- assign logoMaxWidth = section.settings.logo-max-width | escape -%}
-  {%- assign mainMenu = section.settings.header-main-menu -%}
-
-  {% if section.settings.promo-text != blank %}
-    <div class="header-promo-wrapper">
-      <div class="header-promo">
-        <p class="header-promo-text">{{ section.settings.promo-text }}</p>
-      </div>
-    </div>
-  {% endif %}
-
-  <div class="main-header-wrapper">
-    <header class="main-header clearfix" role="banner">
-
-      <form class="header-search-form" action="/search" method="get">
-        <input class="header-search-input" name="q" type="text" placeholder="{{ 'general.search.submit' | t }}" />
-      </form>
-
-      <div class="branding">
-        {% if logo != blank %}
-          <a class="logo" href="/">
-            <img
-              src="{{ logo | img_url: '400x200' }}"
-              alt="{{ shop.name | escape }}"
-              style="max-width: {{ logoMaxWidth }}px;">
-          </a>
-        {% else %}
-          {% if template contains 'index' %}
-            <h1 class="site-title">{{ shop.name }}</h1>
-          {% else %}
-            <div class="site-title"><a href="/">{{ shop.name }}</a></div>
-          {% endif %}
-        {% endif %}
-      </div>
-
-      <div class="header-tools">
-        <a class="cart-count {% if cart.item_count < 100 %}contain-count{% endif %}" href="/cart">
-          <span class="bag-count">{{ cart.item_count }}</span>
-          <span class="bag-text">{{ 'layout.header.cart_item_count' | t: count: cart.item_count }}</span>
-        </a>
-
-        {% include 'currency-switcher' with 'header' %}
-      </div>
-
-      <div class="mobile-header-tools">
-        <span class="mobile-header-search-toggle">&#57346;</span>
-        <a class="mobile-cart-count {% if cart.item_count < 100 %}contain-count{% endif %}" href="/cart">&#57348; <span class="bag-count">{{ cart.item_count }}</span></a>
-        <span class="mobile-navigation-toggle"><span></span></span>
-      </div>
-
-      <nav class="navigation">
-        <ul class="navigation-first-tier">
-          {% for link in linklists[mainMenu].links %}
-            {% if link.handle == 'mega-nav' %}
-              {% include 'mega-navigation' %}
-            {% else %}
-              {% include 'has-dropdown' %}
-              <li class="{% if has-dropdown %}has-dropdown{% endif %} regular-nav">
-                <a href="{{ link.url }}">{{ link.title }} {% if has-dropdown %}<span class="mobile-tier-toggle"></span>{% endif %}</a>
-                {% if has-dropdown %}
-                  <ul class="navigation-second-tier">
-                    {% for link in linklists[link.handle].links %}
-                      {% include 'has-dropdown' %}
-                      <li class="{% if has-dropdown %}has-dropdown{% endif %}">
-                        <a href="{{ link.url }}">{{ link.title }} {% if has-dropdown %}<span class="mobile-tier-toggle"></span>{% endif %}</a>
-                        {% if has-dropdown %}
-                          <ul class="navigation-third-tier">
-                            {% for link in linklists[link.handle].links %}
-                              {% include 'has-dropdown' %}
-                              <li class="{% if has-dropdown %}has-dropdown{% endif %}">
-                                <a href="{{ link.url }}">{{ link.title }} {% if has-dropdown %}<span class="mobile-tier-toggle"></span>{% endif %}</a>
-                                {% if has-dropdown %}
-                                  <ul class="navigation-fourth-tier">
-                                    {% for link in linklists[link.handle].links %}
-                                      <li>
-                                        <a href="{{ link.url }}">{{ link.title }}</a>
-                                      </li>
-                                    {% endfor %}
-                                  </ul>
-                                {% endif %}
-                              </li>
-                            {% endfor %}
-                          </ul>
-                        {% endif %}
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            {% endif %}
-          {% endfor %}
-          {% if shop.customer_accounts_enabled %}
-            <li class="customer-links">
-              {% if customer %}
-                <a href="/account">{{ 'customers.account.title' | t }}</a>
-              {% else %}
-                {{ 'customers.account.title' | t | customer_login_link }}
-              {% endif %}
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
-
-    </header>
-  </div>
-
-</div>
-
+<header>
+  this is the header
+</header>
 {% schema %}
 {
   "name": "Header",
-  "max_blocks": 4,
-  "class": "section-header",
+  "max_blocks": 3,
   "settings": [
     {
-      "type": "header",
-      "content": "Logo"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Logo image",
-      "info": "450 x 200px .jpg recommended"
-    },
-    {
-      "type": "text",
-      "id": "logo-max-width",
-      "label": "Logo width",
-      "info": "Custom logo width (in pixels)",
-      "default": "450"
-    },
-    {
-      "type": "header",
-      "content": "Top bar"
-    },
-    {
-      "type": "html",
-      "id": "promo-text",
-      "label": "Promotional text"
-    },
-    {
-      "type": "header",
-      "content": "Navigation"
-    },
-    {
-      "type": "link_list",
-      "id": "header-main-menu",
-      "label": "Main menu",
-      "default": "main-menu"
-    },
-    {
-      "type": "header",
-      "content": "Mega navigation ([?](http:\/\/www.pixelunion.net\/support\/pacific-theme-manual/#meganav))"
-    },
-    {
-      "type": "text",
-      "id": "mega-nav-item-text",
-      "label": "Navigation name",
-      "info": "This will replace \"mega nav\" in your menu."
+      "type": "checkbox",
+      "id": "show-payment-options",
+      "label": "Enable payment icons",
+      "default": true
     }
   ],
   "blocks": [
     {
-      "type": "feature",
-      "name": "Mega navigation tier",
+      "type": "menus",
+      "name": "Menus",
       "settings": [
         {
           "type": "link_list",
-          "id": "link-list",
-          "label": "Menu"
+          "id": "footer-link-list-1",
+          "label": "Menu 1"
         },
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image",
-          "info": "900 x 900px .jpg recommended"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "Link"
+          "type": "link_list",
+          "id": "footer-link-list-2",
+          "label": "Menu 2"
         }
-      ]
+      ],
+      "limit": 1
+    },
+    {
+      "type": "featured-content",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "footer-text-box",
+          "label": "Text"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "tweet",
+      "name": "Twitter feed",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "twitter-id",
+          "label": "Username",
+          "info": "Note: Don't include the '@' symbol."
+        },
+        {
+          "type": "checkbox",
+          "id": "twitter-retweets",
+          "label": "Show retweets"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "instagram",
+      "name": "Instagram feed",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "instagram-access-token",
+          "label": "Access token ([?](http:\/\/instagram.pixelunion.net))"
+        },
+        {
+          "type": "select",
+          "id": "instagram-count",
+          "label": "Number of images",
+          "options": [
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            }
+          ]
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "connect",
+      "name": "Newsletter / social links",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable-mailing-list",
+          "label": "Enable newsletter"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable-social-links",
+          "label": "Enable social links"
+        }
+      ],
+      "limit": 1
     }
   ]
 }

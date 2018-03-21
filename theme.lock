@@ -46,29 +46,15 @@ assets/theme.scss.liquid:
 config/settings_data.json:
   development: 2018-03-21T09:41:53-04:00   f52f341687b703198c77a6c0c4e6696e
 config/settings_schema.json:
-  development: 2018-03-21T09:41:53-04:00   ef259be138dfac3ec726ab979c4645bc
+  development: 2018-03-21T10:02:28-04:00   bc4ffbd544e2e0ac87bd511cd1aec4fb
 layout/theme.liquid:
-  development: 2018-03-21T09:41:50-04:00   983c11b0b81d6a46fbc84eaa26495b53
+  development: 2018-03-21T10:02:30-04:00   c44e718e9d8be43eab7e24b8fd23fb4d
 locales/en.default.json:
   development: 2018-03-21T09:41:50-04:00   3c0c330d2ca3e0a4a635fd1e976d32a8
 sections/footer.liquid:
-  development: 2018-03-21T09:41:46-04:00   88702fb903b784cdd7c77c88e90672ff
+  development: 2018-03-21T10:01:40-04:00   4bfc4543a9780ccd5042767f5dbd40ad
 sections/header.liquid:
-  development: 2018-03-21T09:41:46-04:00   e2baa426b6eaa7218d873c6558c220d7
-sections/home-blog-posts.liquid:
-  development: 2018-03-21T09:41:46-04:00   f7b9b8e91741b4005b5237db4269967c
-sections/home-collection-list.liquid:
-  development: 2018-03-21T09:41:46-04:00   8b35cdbca715a92195c85c204daf8217
-sections/home-featured-collection.liquid:
-  development: 2018-03-21T09:41:46-04:00   d64090444f4778ab43d06a869642ea59
-sections/home-featured-video.liquid:
-  development: 2018-03-21T09:41:46-04:00   8fde9b41a55ef13fbda0ff1c511e289a
-sections/home-image-gallery.liquid:
-  development: 2018-03-21T09:41:46-04:00   51e0d3286a9e3958e48f2175d8c3cf0f
-sections/home-image-with-text.liquid:
-  development: 2018-03-21T09:41:46-04:00   d295d33601700ab27c06ab1a3af01d25
-sections/home-slideshow.liquid:
-  development: 2018-03-21T09:41:46-04:00   1c651d3c6dac2e0f9df840a098f04df8
+  development: 2018-03-21T10:01:29-04:00   e65ed56e4eea042d6c1bde838e8b101f
 sections/page-cart.liquid:
   development: 2018-03-21T09:41:46-04:00   fd932ef69c93ff434cb404340bd7068e
 sections/page-collection.liquid:
@@ -77,8 +63,6 @@ sections/page-collections-list.liquid:
   development: 2018-03-21T09:41:46-04:00   e9fcab936fc74ff28b7354797737fad9
 sections/page-product.liquid:
   development: 2018-03-21T09:41:46-04:00   214009ec2ade99d3c1184a6a5c3cc6de
-sections/promotions.liquid:
-  development: 2018-03-21T09:41:47-04:00   b89c81933ed53015e171b93eb42ebd69
 snippets/article-list-item.liquid:
   development: 2018-03-21T09:41:50-04:00   34a9b1b0a158b987724262c4be08a005
 snippets/breadcrumbs.liquid:
@@ -137,8 +121,6 @@ snippets/share-buttons.liquid:
   development: 2018-03-21T09:41:51-04:00   87f44eb9afb0809e3676d0ddbbd844a9
 snippets/shipping-calculator.liquid:
   development: 2018-03-21T09:41:51-04:00   2f90337b9da7f96b5410d652a7786fae
-snippets/sidebar.liquid:
-  development: 2018-03-21T09:41:51-04:00   4c9e7c02efa730e6cba771bfb7aa9fac
 snippets/social-meta.liquid:
   development: 2018-03-21T09:41:52-04:00   1829f2c844760191ba6b6471f2a85b0e
 snippets/svg-sprite.liquid:
