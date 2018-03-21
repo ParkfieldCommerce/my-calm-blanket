@@ -1,0 +1,45 @@
+
+<article class="blog-post">
+
+  <div class="post-meta meta">
+    <span class="post-date">{{ article.published_at | date: format: "short_month" }}</span>
+    {% if settings.blog-show-author %}
+      <span class="post-author">&bull; {{ article.author }}</span>
+    {% endif %}
+    {% if article.comments_enabled? and article.comments.size > 0 and settings.blog-show-comment-count %}
+      <span class="post-comment-count">&bull; {{ 'blogs.comments.count' | t: count: article.comments_count }}</span>
+    {% endif %}
+    {% if article.tags.size > 0 and settings.blog-show-tags %}
+      <span class="post-tags">&bull;
+        {% for tag in article.tags %}
+        <a href="{{ blog.url }}/tagged/{{ tag | handle }}">#{{ tag }}</a>
+        {% endfor %}
+      </span>
+    {% endif %}
+  </div>
+
+  <h3 class="post-title"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+
+  <div class="rte post-content">
+    {% if article.image %}
+      <div class="post-image">
+        {% if template == 'article' %}
+          <img src="{{ article.image | img_url: '1024x1024' }}" alt="{{ article.title }}">
+        {% else %}
+          <a href="{{ article.url }}">
+            <img src="{{ article.image | img_url: '1024x1024' }}" alt="{{ article.title }}">
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if article.excerpt != blank %}
+      {{ article.excerpt }}
+    {% else %}
+      <p>{{ article.content | strip_html | truncatewords: 50 }}</p>
+    {% endif %}
+    <p>
+      <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+    </p>
+  </div>
+
+</article>

@@ -1,0 +1,93 @@
+<div data-section-id="{{ section.id }}" data-section-type="featured-collection">
+
+  {% assign productTextStyle = settings.product_text_style %}
+  {% assign stockLevelOverlay = settings.stock_level_overlay %}
+  {% assign stockLevelOverlayThreshold = settings.stock_level_overlay_range %}
+  {% assign sectionTitle = section.settings.title | escape %}
+  {% assign sectionBorder = section.settings.border %}
+  {% assign productsCollection = section.settings.collection %}
+  {% assign productsPerRow = section.settings.products_in_row %}
+  {% assign featuredProducts = productsPerRow | times: section.settings.rows %}
+
+  <div class="home-module home-featured-collection
+    rows-of-{{ productsPerRow }}
+    {% if sectionBorder %}has-border{% endif %}"
+    data-text-style="{{ productTextStyle }}">
+
+    <div class="home-module-content">
+
+      {%
+        include 'home-section-title',
+        conditional: productsCollection,
+        onboarding: 'onboarding.featured_products.title'
+      %}
+
+      <div class="home-featured-collection-list collection-products uniform-layout {{ text-style }}-style">
+        {% if productsCollection != blank %}
+          {% for product in collections[productsCollection].products limit: featuredProducts %}
+            {% include 'product-list-item' %}
+          {% endfor %}
+        {% else %}
+          {% for i in (1..featuredProducts) %}
+            {% include 'product-list-item-demo' %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "border",
+      "label": "Show border",
+      "default": false
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Products will be pulled from this collection."
+    },
+    {
+      "type": "range",
+      "id": "products_in_row",
+      "label": "Products per row",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "Rows",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 2
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": ""
+      }
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,11 @@
+{% if conditional != blank or conditional.size > 0 %}
+  {% if sectionTitle != blank %}
+    <h4 class="section-title">{{ sectionTitle }}</h4>
+  {% endif %}
+{% else %}
+  {% if sectionTitle == blank %}
+    <h4 class="section-title">{{ onboarding | t }}</h4>
+  {% else %}
+    <h4 class="section-title">{{ sectionTitle }}</h4>
+  {% endif %}
+{% endif %}

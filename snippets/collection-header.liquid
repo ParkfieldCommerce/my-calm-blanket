@@ -1,0 +1,28 @@
+{% if collection.image and collectionImage %}
+  <div class="collection-header">
+    <img alt="{{ collection.image.alt | escape }}" src="{{ collection | img_url: '1024x1024' }}">
+
+    <div class="collection-details">
+      <h1>{{ collection.title }}</h1>
+      {% if collection.description != blank %}
+        <div class="collection-description rte">
+          {{ collection.description | strip_html | truncatewords: 20 }}
+        </div>
+
+        {% capture shortDescription %}{{ collection.description | strip_html | truncatewords: 20 }}{% endcapture %}
+        {% if collection.description.size > shortDescription.size %}
+          <span class="collection-description-more">{{ 'collections.collection.read_more' | t }}</span>
+          <script>
+            window.collectionJSON = {{ collection | json }};
+          </script>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  {% if collection.description != blank %}
+    <div class="collection-description rte">
+      {{ collection.description }}
+    </div>
+  {% endif %}
+{% endif %}

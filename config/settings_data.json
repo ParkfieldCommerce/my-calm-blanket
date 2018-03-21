@@ -1,0 +1,942 @@
+{
+  "current": {
+    "favicon": "",
+    "main-background-image": "",
+    "background-color": "#ffffff",
+    "body-text-color": "#777777",
+    "accent-color": "#466c7e",
+    "heading-color": "#3b4858",
+    "meta-color": "#3b4858",
+    "error-color": "#d60000",
+    "border-color": "#e5e5e5",
+    "primary-button-background": "#466c7e",
+    "primary-button-color": "#ffffff",
+    "secondary-button-background": "#b7bcc2",
+    "secondary-button-color": "#ffffff",
+    "disabled-button-background": "#cccccc",
+    "disabled-button-color": "#888888",
+    "header-text-color": "#3B4858",
+    "header-promo-background-color": "#232b36",
+    "header-promo-text-color": "#ffffff",
+    "header-promo-link-color": "#466c7e",
+    "footer-text-color": "#3B4858",
+    "body-font": "Crimson, sans-serif",
+    "store-title-font": "Karla, sans-serif",
+    "store-title-font-weight": "700",
+    "store-title-font-small-caps": false,
+    "heading-font": "Crimson, sans-serif",
+    "heading-font-weight": "700",
+    "heading-font-small-caps": false,
+    "section-heading-font": "Karla, sans-serif",
+    "section-heading-font-weight": "400",
+    "meta-font": "Karla, sans-serif",
+    "meta-font-weight": "400",
+    "button-font": "Karla, sans-serif",
+    "button-font-weight": "700",
+    "button-font-small-caps": true,
+    "enable-sidebar": "all",
+    "sidebar-link-list-1": "main-menu",
+    "sidebar-link-list-2": "",
+    "sidebar-link-list-3": "",
+    "product_text_style": "overlay",
+    "product_image_flip": false,
+    "social-facebook-url": "",
+    "social-twitter-url": "",
+    "social-google-url": "",
+    "social-pinterest-url": "",
+    "social-instagram-url": "",
+    "social-kickstarter-url": "",
+    "social-vimeo-url": "",
+    "social-youtube-url": "",
+    "social-email-address": "",
+    "social-rss-url": "",
+    "product-show-share-buttons": true,
+    "blog-show-share-buttons": true,
+    "share-widget-facebook": true,
+    "share-widget-twitter": true,
+    "share-widget-pinterest": true,
+    "share-widget-fancy": true,
+    "share-widget-google-plus": true,
+    "share-widget-email": true,
+    "enable_currency_switcher": true,
+    "currency-switcher-format": "money_with_currency_format",
+    "currency-switcher-supported-currencies": "CAD USD",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#1990c6",
+    "checkout_button_color": "#1990c6",
+    "checkout_error_color": "#ff6d6d",
+    "blog-show-rss-icon": true,
+    "blog-show-tags": true,
+    "blog-show-author": false,
+    "blog-show-comment-count": true,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "image": "",
+          "logo-max-width": "450",
+          "promo-text": "Pacific comes with three other presets! Check out bold, bright, and warm.",
+          "header-main-menu": "main-menu-1",
+          "mega-nav-item-text": ""
+        }
+      },
+      "promotions": {
+        "type": "promotions",
+        "blocks": {
+          "promotions-block-one": {
+            "type": "feature",
+            "settings": {
+              "image": "",
+              "url": ""
+            }
+          },
+          "promotions-block-two": {
+            "type": "feature",
+            "settings": {
+              "image": "",
+              "url": ""
+            }
+          },
+          "promotions-block-three": {
+            "type": "feature",
+            "settings": {
+              "image": "",
+              "url": ""
+            }
+          }
+        },
+        "block_order": [
+          "promotions-block-one",
+          "promotions-block-two",
+          "promotions-block-three"
+        ],
+        "settings": {
+          "title": "Promotions",
+          "border": true
+        }
+      },
+      "home-slideshow": {
+        "type": "home-slideshow",
+        "blocks": {
+          "home-slideshow-block-one": {
+            "type": "feature",
+            "settings": {
+              "image": "",
+              "content-alignment": "center",
+              "title-heading": "Slideshow",
+              "text-above": "",
+              "text-below": "Introduce customers to your shop with lifestyle imagery and product photography.",
+              "url": "",
+              "text-color": "#ffffff",
+              "text-shadow": false
+            }
+          },
+          "home-slideshow-block-two": {
+            "type": "feature",
+            "settings": {
+              "image": "",
+              "content-alignment": "center",
+              "title-heading": "Slideshow",
+              "text-above": "",
+              "text-below": "Introduce customers to your shop with lifestyle imagery and product photography.",
+              "url": "",
+              "text-color": "#ffffff",
+              "text-shadow": false
+            }
+          }
+        },
+        "block_order": [
+          "home-slideshow-block-one",
+          "home-slideshow-block-two"
+        ],
+        "settings": {
+          "title": "",
+          "border": false,
+          "layout": "content-width",
+          "transition": "transition-fade",
+          "autoplay_enable": true,
+          "autoplay_delay": 4
+        }
+      },
+      "home-image-gallery": {
+        "type": "home-image-gallery",
+        "settings": {
+          "title": "",
+          "border": false,
+          "text-shadow": false
+        }
+      },
+      "home-featured-collection": {
+        "type": "home-featured-collection",
+        "settings": {
+          "title": "Featured collection",
+          "border": false,
+          "collection": "",
+          "products_in_row": 3,
+          "rows": 2
+        }
+      },
+      "home-image-with-text": {
+        "type": "home-image-with-text",
+        "settings": {
+          "title": "",
+          "border": true,
+          "image_title": "Rich text",
+          "caption": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.<\/p>",
+          "image": "",
+          "image-alignment": "right"
+        }
+      },
+      "home-blog-posts": {
+        "type": "home-blog-posts",
+        "settings": {
+          "title": "News",
+          "border": false,
+          "blog": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "show-payment-options": true
+        }
+      },
+      "page-collection": {
+        "type": "page-collection",
+        "settings": {
+          "product_grid_layout": "uniform",
+          "products_pagination_method": "standard-pagination",
+          "products_in_row": 4,
+          "rows": 25,
+          "show_featured_image": false,
+          "collection_sorting": true,
+          "collection_filtering": false,
+          "collection_filter_link_list_1": "",
+          "collection_filter_link_list_2": "",
+          "collection_filter_link_list_3": "",
+          "stock_level_overlay": false,
+          "stock_level_overlay_range": 5
+        }
+      }
+    },
+    "content_for_index": [
+      "home-slideshow",
+      "home-image-gallery",
+      "home-featured-collection",
+      "home-image-with-text",
+      "home-blog-posts"
+    ]
+  },
+  "presets": {
+    "Cool": {
+      "background-color": "#ffffff",
+      "body-text-color": "#777777",
+      "accent-color": "#466c7e",
+      "heading-color": "#3b4858",
+      "meta-color": "#3b4858",
+      "error-color": "#d60000",
+      "border-color": "#e5e5e5",
+      "primary-button-background": "#466c7e",
+      "primary-button-color": "#ffffff",
+      "secondary-button-background": "#b7bcc2",
+      "secondary-button-color": "#ffffff",
+      "disabled-button-background": "#cccccc",
+      "disabled-button-color": "#888888",
+      "header-text-color": "#3B4858",
+      "header-promo-background-color": "#232b36",
+      "header-promo-text-color": "#ffffff",
+      "header-promo-link-color": "#466c7e",
+      "footer-text-color": "#3B4858",
+      "body-font": "Crimson, sans-serif",
+      "store-title-font": "Karla, sans-serif",
+      "store-title-font-weight": "700",
+      "store-title-font-small-caps": false,
+      "heading-font": "Crimson, sans-serif",
+      "heading-font-weight": "700",
+      "heading-font-small-caps": false,
+      "section-heading-font": "Karla, sans-serif",
+      "section-heading-font-weight": "400",
+      "meta-font": "Karla, sans-serif",
+      "meta-font-weight": "400",
+      "button-font": "Karla, sans-serif",
+      "button-font-weight": "700",
+      "button-font-small-caps": true,
+      "currency-switcher-format": "money_with_currency_format",
+      "currency-switcher-supported-currencies": "CAD USD",
+      "enable-sidebar": "all",
+      "sidebar-link-list-1": "main-menu",
+      "sidebar-link-list-2": "",
+      "sidebar-link-list-3": "",
+      "blog-show-rss-icon": true,
+      "blog-show-tags": true,
+      "blog-show-author": false,
+      "blog-show-comment-count": true,
+      "blog-show-share-buttons": true,
+      "product-show-share-buttons": true,
+      "social-email-address": "",
+      "share-widget-facebook": true,
+      "share-widget-twitter": true,
+      "share-widget-pinterest": true,
+      "share-widget-fancy": true,
+      "share-widget-google-plus": true,
+      "share-widget-email": true,
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "promo-text": "Pacific comes with three other presets! Check out bold, bright, and warm."
+          }
+        },
+        "promotions": {
+          "type": "promotions",
+          "blocks": {
+            "promotions-block-one": {
+              "type": "feature",
+              "settings": {}
+            },
+            "promotions-block-two": {
+              "type": "feature",
+              "settings": {}
+            },
+            "promotions-block-three": {
+              "type": "feature",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "promotions-block-one",
+            "promotions-block-two",
+            "promotions-block-three"
+          ],
+          "settings": {
+            "title": "Promotions",
+            "border": true
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "home-slideshow-block-one": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            },
+            "home-slideshow-block-two": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            }
+          },
+          "block_order": [
+            "home-slideshow-block-one",
+            "home-slideshow-block-two"
+          ],
+          "settings": {
+            "title": "",
+            "border": false,
+            "layout": "content-width",
+            "transition": "transition-fade",
+            "autoplay_enable": true
+          }
+        },
+        "home-image-gallery": {
+          "type": "home-image-gallery",
+          "settings": {
+            "title": "",
+            "border": false,
+            "text-shadow": false
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "border": false,
+            "collection": "",
+            "products_in_row": 3,
+            "rows": 2
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "title": "",
+            "border": true,
+            "image": "",
+            "image-alignment": "right"
+          }
+        },
+        "home-blog-posts": {
+          "type": "home-blog-posts",
+          "settings": {
+            "title": "News",
+            "border": false,
+            "blog": ""
+          }
+        }
+      },
+      "content_for_index": [
+        "home-slideshow",
+        "home-image-gallery",
+        "home-featured-collection",
+        "home-image-with-text",
+        "home-blog-posts"
+      ]
+    },
+    "Bold": {
+      "background-color": "#ffffff",
+      "body-text-color": "#555555",
+      "accent-color": "#000000",
+      "heading-color": "#303030",
+      "meta-color": "#000000",
+      "error-color": "#d60000",
+      "border-color": "#a7a7a7",
+      "primary-button-background": "#303030",
+      "primary-button-color": "#ffffff",
+      "secondary-button-background": "#e5e5e5",
+      "secondary-button-color": "#ffffff",
+      "disabled-button-background": "#cccccc",
+      "disabled-button-color": "#a7a7a7",
+      "header-text-color": "#303030",
+      "header-promo-background-color": "#000000",
+      "header-promo-text-color": "#ffffff",
+      "header-promo-link-color": "#ffffff",
+      "footer-text-color": "#303030",
+      "body-font": "'PT Serif', sans-serif",
+      "store-title-font": "Raleway, sans-serif",
+      "store-title-font-weight": "700",
+      "store-title-font-small-caps": true,
+      "heading-font": "Raleway, sans-serif",
+      "heading-font-weight": "700",
+      "heading-font-small-caps": true,
+      "section-heading-font": "'PT Serif', serif",
+      "section-heading-font-weight": "400",
+      "meta-font": "'PT Serif', serif",
+      "meta-font-weight": "400",
+      "button-font": "Karla, sans-serif",
+      "button-font-weight": "700",
+      "button-font-small-caps": true,
+      "currency-switcher-format": "money_with_currency_format",
+      "currency-switcher-supported-currencies": "CAD USD",
+      "enable-sidebar": "none",
+      "sidebar-link-list-1": "",
+      "sidebar-link-list-2": "",
+      "sidebar-link-list-3": "",
+      "blog-show-rss-icon": true,
+      "blog-show-tags": true,
+      "blog-show-author": false,
+      "blog-show-comment-count": true,
+      "blog-show-share-buttons": true,
+      "product-show-share-buttons": true,
+      "social-email-address": "",
+      "share-widget-facebook": true,
+      "share-widget-twitter": true,
+      "share-widget-pinterest": true,
+      "share-widget-fancy": true,
+      "share-widget-google-plus": true,
+      "share-widget-email": true,
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "promo-text": ""
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "home-slideshow-block-one": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            },
+            "home-slideshow-block-two": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            }
+          },
+          "block_order": [
+            "home-slideshow-block-one",
+            "home-slideshow-block-two"
+          ],
+          "settings": {
+            "title": "",
+            "border": false,
+            "layout": "full-width",
+            "transition": "transition-fade",
+            "autoplay_enable": true
+          }
+        },
+        "home-collection-list": {
+          "type": "home-collection-list",
+          "settings": {
+            "title": "",
+            "border": false
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "border": false,
+            "collection": "",
+            "products_in_row": 4,
+            "rows": 1
+          }
+        },
+        "home-image-gallery": {
+          "type": "home-image-gallery",
+          "blocks": {
+            "home-image-gallery-block-one": {
+              "type": "feature",
+              "settings": {
+                "image": "",
+                "title": "Heading",
+                "text-above": "Subheading",
+                "text-below": "Caption",
+                "url": "",
+                "text-color": "dark",
+                "text-position": "left"
+              }
+            }
+          },
+          "block_order": [
+            "home-image-gallery-block-one"
+          ],
+          "settings": {
+            "title": "",
+            "border": false,
+            "text-shadow": false
+          }
+        },
+        "home-blog-posts": {
+          "type": "home-blog-posts",
+          "settings": {
+            "title": "News",
+            "border": false,
+            "blog": ""
+          }
+        },
+        "page-collection": {
+          "type": "page-collection",
+          "settings": {
+            "products_in_row": 3,
+            "rows": 3,
+            "collection_sorting": false,
+            "collection_filtering": false
+          }
+        }
+      },
+      "content_for_index": [
+        "home-slideshow",
+        "home-collection-list",
+        "home-featured-collection",
+        "home-image-gallery",
+        "home-blog-posts"
+      ]
+    },
+    "Bright": {
+      "background-color": "#ffffff",
+      "body-text-color": "#333333",
+      "accent-color": "#fb4f16",
+      "heading-color": "#1999a8",
+      "meta-color": "#aaaaaa",
+      "error-color": "#d60000",
+      "border-color": "#e5e5e5",
+      "primary-button-background": "#11a8b7",
+      "primary-button-color": "#ffffff",
+      "secondary-button-background": "#b7bcc2",
+      "secondary-button-color": "#ffffff",
+      "disabled-button-background": "#cccccc",
+      "disabled-button-color": "#888888",
+      "header-text-color": "#333333",
+      "header-promo-background-color": "#000000",
+      "header-promo-text-color": "#ffffff",
+      "header-promo-link-color": "#ffffff",
+      "footer-text-color": "#333333",
+      "body-font": "'PT Mono', monospace",
+      "store-title-font": "'PT Mono', monospace",
+      "store-title-font-weight": "700",
+      "store-title-font-small-caps": false,
+      "heading-font": "'PT Mono', monospace",
+      "heading-font-weight": "700",
+      "heading-font-small-caps": true,
+      "section-heading-font": "'PT Mono', monospace",
+      "section-heading-font-weight": "400",
+      "meta-font": "'PT Mono', monospace",
+      "meta-font-weight": "400",
+      "button-font": "'PT Mono', monospace",
+      "button-font-weight": "700",
+      "button-font-small-caps": true,
+      "currency-switcher-format": "money_with_currency_format",
+      "currency-switcher-supported-currencies": "CAD USD",
+      "enable-sidebar": "none",
+      "sidebar-link-list-1": "",
+      "sidebar-link-list-2": "",
+      "sidebar-link-list-3": "",
+      "blog-show-rss-icon": true,
+      "blog-show-tags": true,
+      "blog-show-author": false,
+      "blog-show-comment-count": true,
+      "blog-show-share-buttons": true,
+      "product-show-share-buttons": true,
+      "social-email-address": "",
+      "share-widget-facebook": true,
+      "share-widget-twitter": true,
+      "share-widget-pinterest": true,
+      "share-widget-fancy": true,
+      "share-widget-google-plus": true,
+      "share-widget-email": true,
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "promo-text": ""
+          }
+        },
+        "promotions": {
+          "type": "promotions",
+          "blocks": {
+            "promotions-block-one": {
+              "type": "feature",
+              "settings": {}
+            },
+            "promotions-block-two": {
+              "type": "feature",
+              "settings": {}
+            },
+            "promotions-block-three": {
+              "type": "feature",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "promotions-block-one",
+            "promotions-block-two",
+            "promotions-block-three"
+          ],
+          "settings": {
+            "title": "Promotions",
+            "border": false
+          }
+        },
+        "page-collection": {
+          "type": "page-collection",
+          "settings": {
+            "products_in_row": 3,
+            "rows": 2,
+            "collection_sorting": true,
+            "collection_filtering": false
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "home-slideshow-block-one": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            },
+            "home-slideshow-block-two": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            }
+          },
+          "block_order": [
+            "home-slideshow-block-one",
+            "home-slideshow-block-two"
+          ],
+          "settings": {
+            "title": "",
+            "border": false,
+            "layout": "full-width",
+            "transition": "transition-slide",
+            "autoplay_enable": true
+          }
+        },
+        "home-collection-list": {
+          "type": "home-collection-list",
+          "settings": {
+            "title": "Featured Collections",
+            "border": false
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "border": false,
+            "collection": "",
+            "products_in_row": 2,
+            "rows": 2
+          }
+        },
+        "home-image-gallery": {
+          "type": "home-image-gallery",
+          "blocks": {
+            "home-image-gallery-block-one": {
+              "type": "feature",
+              "settings": {
+                "image": "",
+                "title": "Heading",
+                "text-above": "Subheading",
+                "text-below": "Caption",
+                "url": "",
+                "text-color": "dark",
+                "text-position": "center"
+              }
+            }
+          },
+          "block_order": [
+            "home-image-gallery-block-one"
+          ],
+          "settings": {
+            "title": "",
+            "border": false,
+            "text-shadow": false
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "title": "",
+            "border": false,
+            "image": "",
+            "image-alignment": "right"
+          }
+        }
+      },
+      "content_for_index": [
+        "home-slideshow",
+        "home-collection-list",
+        "home-featured-collection",
+        "home-image-gallery",
+        "home-image-with-text"
+      ]
+    },
+    "Warm": {
+      "background-color": "#ffffff",
+      "body-text-color": "#6e4219",
+      "accent-color": "#5a3214",
+      "heading-color": "#ca5c43",
+      "meta-color": "#b3a394",
+      "error-color": "#d60000",
+      "border-color": "#e5e5e5",
+      "primary-button-background": "#ca5c43",
+      "primary-button-color": "#ffffff",
+      "secondary-button-background": "#bfa78f",
+      "secondary-button-color": "#ffffff",
+      "disabled-button-background": "#cccccc",
+      "disabled-button-color": "#888888",
+      "header-text-color": "#5a3214",
+      "header-promo-background-color": "#000000",
+      "header-promo-text-color": "#ffffff",
+      "header-promo-link-color": "#ffffff",
+      "footer-text-color": "#5a3214",
+      "body-font": "Bitter, serif",
+      "store-title-font": "Bitter, serif",
+      "store-title-font-weight": "700",
+      "store-title-font-small-caps": true,
+      "heading-font": "Bitter, serif",
+      "heading-font-weight": "700",
+      "heading-font-small-caps": false,
+      "section-heading-font": "'Archivo Narrow', sans-serif",
+      "section-heading-font-weight": "400",
+      "meta-font": "'Archivo Narrow', sans-serif",
+      "meta-font-weight": "400",
+      "button-font": "Karla, serif",
+      "button-font-weight": "700",
+      "button-font-small-caps": true,
+      "currency-switcher-format": "money_with_currency_format",
+      "currency-switcher-supported-currencies": "CAD USD",
+      "enable-sidebar": "none",
+      "sidebar-link-list-1": "",
+      "sidebar-link-list-2": "",
+      "sidebar-link-list-3": "",
+      "blog-show-rss-icon": true,
+      "blog-show-tags": true,
+      "blog-show-author": false,
+      "blog-show-comment-count": true,
+      "blog-show-share-buttons": true,
+      "product-show-share-buttons": true,
+      "social-email-address": "",
+      "share-widget-facebook": true,
+      "share-widget-twitter": true,
+      "share-widget-pinterest": true,
+      "share-widget-fancy": true,
+      "share-widget-google-plus": true,
+      "share-widget-email": true,
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "promo-text": ""
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "home-slideshow-block-one": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            },
+            "home-slideshow-block-two": {
+              "type": "feature",
+              "settings": {
+                "title-heading": "Slideshow",
+                "text-below": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            }
+          },
+          "block_order": [
+            "home-slideshow-block-one",
+            "home-slideshow-block-two"
+          ],
+          "settings": {
+            "title": "",
+            "border": false,
+            "layout": "full-width",
+            "transition": "transition-fade",
+            "autoplay_enable": true
+          }
+        },
+        "home-collection-list": {
+          "type": "home-collection-list",
+          "settings": {
+            "title": "Featured Collections",
+            "border": false
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "border": false,
+            "collection": "",
+            "products_in_row": 4,
+            "rows": 1
+          }
+        },
+        "home-image-gallery": {
+          "type": "home-image-gallery",
+          "blocks": {
+            "home-image-gallery-block-one": {
+              "type": "feature",
+              "settings": {
+                "image": "",
+                "title": "Heading",
+                "text-above": "Subheading",
+                "text-below": "Caption",
+                "url": "",
+                "text-color": "dark",
+                "text-position": "center"
+              }
+            }
+          },
+          "block_order": [
+            "home-image-gallery-block-one"
+          ],
+          "settings": {
+            "title": "",
+            "border": false,
+            "text-shadow": false
+          }
+        },
+        "home-blog-posts": {
+          "type": "home-blog-posts",
+          "settings": {
+            "title": "News",
+            "border": false,
+            "blog": ""
+          }
+        },
+        "home-image-gallery-two": {
+          "type": "home-image-gallery",
+          "blocks": {
+            "home-image-gallery-two-block-one": {
+              "type": "feature",
+              "settings": {
+                "image": "",
+                "title": "",
+                "text-above": "",
+                "text-below": "",
+                "url": "",
+                "text-color": "light",
+                "text-position": "center"
+              }
+            },
+            "home-image-gallery-two-block-two": {
+              "type": "feature",
+              "settings": {
+                "image": "",
+                "title": "",
+                "text-above": "",
+                "text-below": "",
+                "url": "",
+                "text-color": "light",
+                "text-position": "center"
+              }
+            },
+            "home-image-gallery-two-block-three": {
+              "type": "feature",
+              "settings": {
+                "image": "",
+                "title": "",
+                "text-above": "",
+                "text-below": "",
+                "url": "",
+                "text-color": "light",
+                "text-position": "center"
+              }
+            }
+          },
+          "block_order": [
+            "home-image-gallery-two-block-one",
+            "home-image-gallery-two-block-two",
+            "home-image-gallery-two-block-three"
+          ],
+          "settings": {
+            "title": "Featured Images",
+            "border": false,
+            "text-shadow": false
+          }
+        }
+      },
+      "content_for_index": [
+        "home-slideshow",
+        "home-collection-list",
+        "home-featured-collection",
+        "home-image-gallery",
+        "home-blog-posts",
+        "home-image-gallery-two"
+      ]
+    }
+  }
+}

@@ -1,0 +1,190 @@
+<div data-section-id="{{ section.id }}" data-section-type="footer">
+
+  {% assign modulesCount = 0 %}
+  {% for block in section.blocks %}
+    {% assign modulesCount = modulesCount | plus: 1 %}
+  {% endfor %}
+
+  <div class="main-footer-wrapper">
+    <footer class="main-footer {% if modulesCount > 0 %}has-border{% endif %}">
+
+      {% if modulesCount > 0 %}
+        <div class="footer-modules showing-{{ modulesCount }}-modules">
+          {% for block in section.blocks %}
+            {%- case block.type -%}
+              {%- when 'menus' -%}
+                {% include 'footer-link-lists' %}
+              {%- when 'featured-content' -%}
+                {% include 'footer-text-box' %}
+              {%- when 'tweet' -%}
+                {% include 'footer-tweet' %}
+              {%- when 'instagram' -%}
+                {% include 'footer-instagram' %}
+              {%- when 'connect' -%}
+                {% include 'footer-connect' %}
+            {% endcase %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="copyright">
+        {% capture year %}
+          {{ "now" | date: "%Y" }}
+        {% endcapture %}
+
+        {% capture shopName %}{{ shop.name | link_to: '/' }}{% endcapture %}
+
+        {% include 'currency-switcher' with 'header' %}
+
+        <p role="contentinfo">
+          {{ 'layout.footer.copyright_html' | t: year: year, shop_name: shopName }}
+          <br>
+          <a href="https://www.pixelunion.net/">Pacific theme by Pixel Union</a>. {{ powered_by_link }}.
+        </p>
+
+        {% include 'payment-icons' %}
+      </div>
+
+    </footer>
+  </div>
+
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <h2 class="modal-title"></h2>
+
+      <div class="modal-message rte"></div>
+
+      <span class="modal-close modal-close-secondary">{{ 'general.general.close' | t }}</span>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-payment-options",
+      "label": "Enable payment icons",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menus",
+      "name": "Menus",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "footer-link-list-1",
+          "label": "Menu 1"
+        },
+        {
+          "type": "link_list",
+          "id": "footer-link-list-2",
+          "label": "Menu 2"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "featured-content",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "footer-text-box",
+          "label": "Text"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "tweet",
+      "name": "Twitter feed",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "twitter-id",
+          "label": "Username",
+          "info": "Note: Don't include the '@' symbol."
+        },
+        {
+          "type": "checkbox",
+          "id": "twitter-retweets",
+          "label": "Show retweets"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "instagram",
+      "name": "Instagram feed",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "instagram-access-token",
+          "label": "Access token ([?](http:\/\/instagram.pixelunion.net))"
+        },
+        {
+          "type": "select",
+          "id": "instagram-count",
+          "label": "Number of images",
+          "options": [
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            }
+          ]
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "connect",
+      "name": "Newsletter / social links",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable-mailing-list",
+          "label": "Enable newsletter"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable-social-links",
+          "label": "Enable social links"
+        }
+      ],
+      "limit": 1
+    }
+  ]
+}
+
+{% endschema %}

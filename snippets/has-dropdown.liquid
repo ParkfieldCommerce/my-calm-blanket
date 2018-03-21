@@ -1,0 +1,4 @@
+{% assign has-dropdown = false %}
+{% if linklists[link.handle] and linklists[link.handle].links.size > 0 %}
+  {% assign has-dropdown = true %}
+{% endif %}

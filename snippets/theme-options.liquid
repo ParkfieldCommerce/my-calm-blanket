@@ -1,0 +1,34 @@
+<script>
+
+  window.Shop = {};
+
+  Shop.version = "2.1.5";
+
+  Shop.currency = {{ shop.currency | json }};
+  Shop.moneyFormat = {{ shop.money_format | strip_html | json }};
+  Shop.moneyFormatCurrency = {{ shop.money_with_currency_format | strip_html | json }};
+
+  {% if shop.customer_accounts_enabled and customer %}
+    Shop.customerLoggegdIn = true;
+  {% endif %}
+
+  {% if cart.requires_shipping %}
+    Shop.requiresShipping = true
+  {% endif %}
+
+  {% if shop.customer_accounts_enabled and customer and customer.default_addresses %}
+    Shop.customerAddress = {{ customer.default_address | json }};
+  {% endif %}
+
+  {% if settings.enable_currency_switcher %}
+    /*
+      Override the default Shop.moneyFormat for recalculating
+      prices on the product and cart templates.
+    */
+    Shop.currencySwitcher = true;
+    Shop.moneyFormat = {{ shop[settings.currency-switcher-format] | json }};
+    Shop.currencySwitcherFormat = "money_with_currency_format";
+    Shop.defaultCurrency = Shop.currency;
+  {% endif %}
+
+</script>

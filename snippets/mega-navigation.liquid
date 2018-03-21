@@ -1,0 +1,87 @@
+{% assign itemCount = 0 %}
+{% for block in section.blocks %}
+  {% assign itemCount = itemCount | plus: 1 %}
+{% endfor %}
+
+{% if section.settings.mega-nav-item-text != blank %}
+  {% assign megaNavTitle = section.settings.mega-nav-item-text | escape %}
+{% else %}
+  {% assign megaNavTitle = link.title | escape %}
+{% endif %}
+
+<li class="mega-nav has-{{itemCount}}-items">
+  <a href="#">{{ megaNavTitle }} <span class="mobile-tier-toggle"></span></a>
+
+  <ul class="mega-nav-dropdown">
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% assign megaNavList = block.settings.link-list %}
+        {% assign megaNavImage = block.settings.image %}
+        {% assign megaNavUrl = block.settings.url %}
+
+        <li class="mega-nav-item">
+          {% if megaNavImage != blank %}
+            {% if megaNavUrl != blank %}
+              <a class="mega-nav-item-image-wrapper" href="{{ megaNavUrl }}">
+            {% endif %}
+              <img class="mega-nav-item-image" alt="{{ image.alt | escape }}" src="{{ megaNavImage | img_url: '900x900' }}">
+            {% if megaNavUrl != blank %}
+              </a>
+            {% endif %}
+          {% endif %}
+
+          {% assign linkTag = 'a' %}
+          {% if megaNavUrl == blank %}
+            {% assign linkTag = 'span' %}
+          {% endif %}
+          <{{ linkTag }} class="meta tier-toggle-wrap" href="{{ megaNavUrl }}">
+            {{ linklists[megaNavList].title }} <span class="mobile-tier-toggle"></span>
+          </{{ linkTag }}>
+
+          {% assign firstTierTitle = linklists[megaNavList].title %}
+          <ul class="mega-nav-first-tier">
+            {% for link in linklists[megaNavList].links %}
+              {% include 'has-dropdown' %}
+              <li class="{% if has-dropdown %}has-children{% endif %}">
+                <a href="{{ link.url }}">{{ link.title }} {% if has-dropdown %}<span class="mobile-tier-toggle"></span>{% endif %}</a>
+                {% if has-dropdown %}
+                  <ul class="mega-nav-second-tier">
+                    <li class="mega-nav-breadcrumbs">
+                      <span>{{firstTierTitle}}</span>
+                      <span class="current-tier">{{ link.title }}</span>
+                      <span class="previous-tier">{{ 'layout.mega_navigation.back' | t }}</span>
+                    </li>
+                    {% assign secondTierTitle = link.title %}
+                    {% for link in linklists[link.handle].links %}
+                      {% include 'has-dropdown' %}
+                      <li class="{% if has-dropdown %}has-children{% endif %}">
+                        <a href="{{ link.url }}">{{ link.title }} {% if has-dropdown %}<span class="mobile-tier-toggle"></span>{% endif %}</a>
+                        {% if has-dropdown %}
+                          <ul class="mega-nav-third-tier">
+                            <li class="mega-nav-breadcrumbs">
+                              <span class="first-tier">{{firstTierTitle}}</span>
+                              <span>{{secondTierTitle}}</span>
+                              <span class="current-tier">{{ link.title }}</span>
+                              <span class="previous-tier">{{ 'layout.mega_navigation.back_to' | t: tier: secondTierTitle }}</span>
+                            </li>
+                            {% for link in linklists[link.handle].links %}
+                              {% include 'has-dropdown' %}
+                              <li class="{% if has-dropdown %}has-children{% endif %}">
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+
+</li>

@@ -1,0 +1,96 @@
+{% unless form_id %}
+  {% assign form_id = product.id %}
+{% endunless %}
+
+<div class="product-form" data-product-form="{{ form_id }}">
+
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="brand" content="{{ product.vendor }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product | img_url: 'grande' }}">
+
+  <form id="product-form"
+    action="/cart/add"
+    method="post"
+    enctype="multipart/form-data"
+    data-product-id="{{ product.id }}">
+
+    <div id="infiniteoptions-container"></div>
+    <div id="uploadery-container"></div>
+
+    <div class="product-options">
+      {% if product.variants.size > 1 %}
+        {% include 'product-options-dropdown' %}
+
+        <div class="selector-wrapper no-js-required">
+          <label for="product-select-{{ form_id }}"></label>
+          <select
+            class="product-select"
+            name="id"
+            id="product-select-{{ form_id }}">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+                <option
+                  {% if variant == selected_variant %}selected="selected"{% endif %}
+                  value="{{ variant.id }}"
+                  data-variant-id="{{ variant.id }}">
+                  {{ variant.title }} - {{ variant.price | money }}
+                </option>
+              {% else %}
+                <option disabled="disabled"
+                  value="{{ variant.id }}"
+                  data-variant-id="{{ variant.id }}">
+                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      {% else %}
+        <input
+          class="product-select"
+          name="id"
+          value="{{ product.variants[0].id }}"
+          type="hidden"
+          data-variant-title="{{ product.variants[0].title }}" />
+      {% endif %}
+    </div>
+
+    {% if section.settings.enable_product_quantity %}
+      <div class="product-quantity">
+        <div class="input-wrapper">
+          <label for="quantity">{{ 'general.general.quantity' | t }}</label>
+          <input type="text" name="quantity" id="quantity" value="1" />
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="product-submit" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+      <span class="product-price">
+        <span class="product-price-minimum money" itemprop="price">
+          {{ variant.price | money }}
+        </span>
+
+        {% if variant.compare_at_price > variant.price %}
+          <span class="product-price-compare money original">
+            {{ variant.compare_at_price | money }}
+          </span>
+        {% endif %}
+      </span>
+
+      {% if variant.available %}
+        <input class="add-to-cart" type="submit" value="{{ 'products.product.add_to_cart' | t }}" />
+        <link itemprop="availability" href="http://schema.org/InStock">
+      {% else %}
+        <input type="button" class="add-to-cart disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
+        <link itemprop="availability" href="http://schema.org/OutOfStock">
+      {% endif %}
+    </div>
+
+    <div class="product-message"></div>
+
+    {% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
+    {% include 'product-json', id: product.id, add_to_cart_text: add_to_cart_text, enable_history: true %}
+  </form>
+</div>
