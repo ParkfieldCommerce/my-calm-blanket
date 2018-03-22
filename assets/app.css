@@ -82,18 +82,16 @@ button {
 .Promobar {
   padding: 10px 0px;
   position: relative; }
-
-.Promobar__text {
-  text-align: center;
-  color: white;
-  font-size: 1.4rem; }
-
-.Promobar__close {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 40px; }
-  @media screen and (max-width: 375px) {
-    .Promobar__close {
-      right: 10px; } }
+  .Promobar__text {
+    text-align: center;
+    color: white;
+    font-size: 1.4rem; }
+  .Promobar__close {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 40px; }
+    @media screen and (max-width: 375px) {
+      .Promobar__close {
+        right: 10px; } }

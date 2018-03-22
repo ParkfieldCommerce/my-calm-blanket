@@ -12,7 +12,7 @@ $body-color: #282B32;
 $bg-main: white;
 $bg-alt: #F6F6F6;
 $bg-dark: $accent-color;
-
+$border-color: #E6E6E6;
 //Mixins
 @mixin minQuery($resolution){
   @media screen and (min-width: $resolution){
@@ -45,7 +45,16 @@ $bg-dark: $accent-color;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
-
+@mixin align-items($position){
+  -webkit-box-align: $position;
+  -ms-flex-align: $position;
+  align-items: $position;
+}
+@mixin justify-content($position){
+  -webkit-box-pack: $position;
+  -ms-flex-pack: $position;
+  justify-content: $position;
+}
 @mixin prefix($property, $value) { 
   $prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
   @each $prefix in $prefixes {
@@ -96,7 +105,14 @@ p{
   font-size: 1.8rem;
   color: $body-color;
 }
-a{font-size: 1.8rem;}
+a{
+  font-size: 1.8rem;
+  color: $body-color;
+  &:hover{
+    color: $accent-color;
+    transition: color .3s;
+  }
+}
 button{
   font-size: 1.8rem;
   border-radius: 0;
@@ -107,7 +123,13 @@ button{
     background-color: transparent;
   }
 }
-
+ul{
+  padding: 0;
+  margin: 0;
+}
+img{
+  vertical-align: middle;
+}
 .Button{
   max-width: 90%;
   width: 350px;
@@ -176,5 +198,189 @@ $gutter: 10px;
   right: 40px;
   @include maxQuery($xs){
     right: 10px;
+  }
+}
+/* Header */
+.HeaderContainer{
+/*   position: fixed;
+z-index: 20;
+top: 0;
+left: 0;
+width: 100%; */
+  background-color: $bg-main;
+}
+.Header{
+  @include flex();
+  @include align-items(center);
+  height: 92px;
+}
+.Header__section--logo{
+  width: 15%;
+  @include flex();
+  @include align-items(center);
+}
+.Header__section--nav{
+  width: 45%;
+}
+.Header__section--account{
+  width: 40%;
+  @include flex();
+  @include justify-content(flex-end);
+  @include align-items(center);
+}
+.Header__account--user,
+.Header__account--cart{
+  margin-left: 30px;
+}
+.Header__account--madein{
+  @include align-items(center);
+  @include flex();
+  img{
+    margin-right: 17px;
+  }
+}
+.MobileHeader{
+  display: none;
+}
+@include maxQuery(1000px){
+  .Header{
+    display: none;
+  }
+  .MobileHeader{
+    @include flex();
+    @include align-items(center);
+    height: 70px;
+    height: 10vh;
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.MobileHeader__section{
+  width: 33.33%;
+  @include flex();
+  @include justify-content(center);
+}
+.MobileHeader__toggle{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  &:after, &:before{
+    content:'';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $body-color;
+    position: absolute;
+  }
+  &:after{
+    top: 5px;
+    width: 100%;
+  }
+  &:before{
+    bottom: 5px;
+    width: 100%;
+  }
+}
+.MobileHeader__toggle .line{
+  width: 100%;
+  height: 2px;
+  display: block;
+  position: relative;
+  background-color: $body-color;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.MobileHeader__toggle .line, 
+.MobileHeader__toggle .line::after,
+.MobileHeader__toggle .line::before{
+  transition: transform .5s ease-in-out, top .5s ease-in-out;
+}
+
+.MobileHeader__toggle.active{
+  .line{
+    @include prefix(transform, rotate(45deg));
+  }
+  .line::after{
+    width: 100%;
+    top: 0;
+    @include prefix(transform, rotate(90deg));
+  }
+  .line::before{
+    opacity: 0;
+  }
+}
+
+/* Navigation*/
+.Navigation__links{
+  @include flex();
+}
+.Navigation__link{
+  flex: 1;
+}
+
+/* Mobile Navigation */
+.MobileNavigation{
+  height: 90vh;
+  display: none;
+  background-color: green;
+}
+.MobileNavigation__links{
+  height: 100%;
+}
+.MobileNavigation__link{
+  height: 20%;
+  font-size: 2.4rem;
+  @include flex();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+/* Hero */
+.Hero{
+  width: 100%;
+  position: relative;
+}
+.Hero__image{
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Hero__content{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 120px;
+}
+.Hero__heading{
+  font-size: 4.8rem;
+  margin-bottom: 40px;
+}
+.Hero__button{
+  @include flex();
+  @include align-items(center);
+  @include justify-content(center);
+  width: 165px;
+}
+
+@include maxQuery(1200px){
+  .Hero__heading{
+    font-size: 3.6rem;
+  }
+  .Hero__content{
+    left: 90px;
+  }
+}
+@include maxQuery(768px){
+  .Hero__heading{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+  }
+  .Hero__content{
+    left: 30px;
+  }
+  .Hero__button{
+    font-size: 1.4rem;
+    width: 120px;
+    height: 40px;
   }
 }

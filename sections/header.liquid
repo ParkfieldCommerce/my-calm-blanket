@@ -1,18 +1,54 @@
+<div class="container m">
 <header class="Header">
-  <div class="Header__section Header__section--logo"></div>
+  <div class="Header__section Header__section--logo">
+    <a href="/"><img src="{{section.settings.logo | img_url:'master'}}" alt="{{section.settings.logo.alt}}"></a>
+  </div>
   <div class="Header__section Header__section--nav">
-    <nav>
-      <ul>
+    <nav class="Navigation">
+      <ul class="Navigation__links">
         {% for link in linklists['main-menu'].links %}
-        <li><a href="{{link.url}}">{{link.title}}</a></li>
+        <li class="Navigation__link"><a href="{{link.url}}">{{link.title}}</a></li>
         {% endfor %}
       </ul>
     </nav>
   </div>
   <div class="Header__section Header__section--account">
-    <img src="{{section.settings.designed_image | img_url:'master'}}" alt="{{section.settings.designed_image.alt}}">
+    <div class="Header__account--madein">
+      <img src="{{section.settings.designed_image | img_url:'master'}}" alt="{{section.settings.designed_image.alt}}">
+      <p>{{section.settings.designed_text}}</p>
+    </div>
+    <a class="Header__account--user" href="/account">{% include 'icons' with icon:'account' %}</a>
+    <a class="Header__account--cart" href="/cart">{% include 'icons' with icon:'cart' %}</a>
   </div>
 </header>
+</div>
+
+<header class="MobileHeader">
+  <div class="MobileHeader__section MobileHeader__section--toggle">
+    <div class="MobileHeader__toggle">
+      <span class="line"></span>
+    </div>
+  </div>
+  <div class="MobileHeader__section MobileHeader__section--logo">
+    <img src="{{section.settings.logo | img_url:'master'}}" alt="{{section.settings.logo.alt}}">
+  </div>
+  <div class="MobileHeader__section MobileHeader__section--account">
+    <span class="Header__account--cart">{% include 'icons' with icon:'cart' %}</span>
+  </div>
+</header>
+<nav class="MobileNavigation">
+  <ul class="MobileNavigation__links">
+    {% for link in linklists['main-menu'].links %}
+    <li class="MobileNavigation__link"><a href="{{link.url}}">{{link.title}}</a></li>
+    {% endfor %}
+    {% if customer %}
+    <li class="MobileNavigation__link"><a href="/account">My Account</a></li>
+    {% else %}
+    <li class="MobileNavigation__link"><a href="/account/login">Login</a></li>
+    <li class="MobileNavigation__link"><a href="/account/register">Register</a></li>
+    {% endif %}
+  </ul>
+</nav>
 {% schema %}
 {
   "name": "Header",

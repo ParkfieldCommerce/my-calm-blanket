@@ -1,0 +1,138 @@
+<div class="Hero">
+  <a href="{{section.settings.button_url}}">
+    <div class="Hero__image"></div>
+    <div class="Hero__content" data-aos="fade-up" data-aos-anchor-placement="top-center">
+      <h2 class="Hero__heading">{{section.settings.heading_line1}}<br>{{section.settings.heading_line2}}</h2>
+      <span class="Hero__button Button Button--main">{{section.settings.button_text}}</span>
+    </div>
+  </a>
+</div>
+<style>
+  .Hero .Hero__content .Hero__heading{
+    color: {{section.settings.color}};
+  }
+  
+  .Hero .Hero__image{
+    padding-top:{{section.settings.desktop_padding_top}}%;
+    background-position: {{section.settings.desktop_horizontal_position}}% 50%;
+    background-image: url('{{section.settings.image | img_url:'master'}}');
+  }
+
+  @media screen and (max-width: 900px){
+    .Hero .Hero__image{
+      padding-top:{{section.settings.mobile_padding_top}}%;
+      background-position: {{section.settings.mobile_horizontal_position}}% 50%;
+      background-image: url('{{section.settings.mobile_image | img_url:'master'}}');
+    }
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "class": "homepage-hero",
+    "settings":[
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"mobile_image",
+        "label":"Mobile Image"
+      },
+      {
+        "type":"header",
+        "content":"Heading Settings"
+      },
+      {
+        "type":"text",
+        "id":"heading_line1",
+        "label":"Heading Line 1"
+      },
+      {
+        "type":"text",
+        "id":"heading_line2",
+        "label":"Heading Line 2"
+      },
+      {
+        "type":"color",
+        "id":"color",
+        "label":"Text Color",
+        "default":"#333e48"
+      },
+      {
+        "type":"header",
+        "content":"Button Settings"
+      },
+      {
+        "type":"text",
+        "id":"button_text",
+        "label":"Text"
+      },
+      {
+        "type":"url",
+        "id":"button_url",
+        "label":"Link"
+      },
+      {
+        "type":"header",
+        "content":"Desktop Image Settings"
+      },
+      {
+          "type":   "range",
+          "id":     "desktop_padding_top",
+          "min":       0,
+          "max":       100,
+          "step":      1,
+          "unit":      "%",
+          "label":     "Desktop Image Height",
+          "default":   49
+      },
+      {
+          "type":   "range",
+          "id":     "desktop_horizontal_position",
+          "min":       0,
+          "max":       100,
+          "step":      1,
+          "unit":      "%",
+          "label":     "Desktop Horizontal Position",
+          "default":   50,
+          "info":"Changes the horizontal position of the image, if the entire image isn't shown"
+      },
+      {
+        "type":"header",
+        "content":"Mobile Image Settings"
+      },
+      {
+          "type":   "range",
+          "id":     "mobile_padding_top",
+          "min":       50,
+          "max":       150,
+          "step":      1,
+          "unit":      "%",
+          "label":     "Mobile Image Height",
+          "default":   135
+      },
+      {
+          "type":   "range",
+          "id":     "mobile_horizontal_position",
+          "min":       0,
+          "max":       100,
+          "step":      1,
+          "unit":      "%",
+          "label":     "Mobile Horizontal Position",
+          "default":   35,
+          "info":"Changes the horizontal position of the image, if the entire image isn't shown"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}
