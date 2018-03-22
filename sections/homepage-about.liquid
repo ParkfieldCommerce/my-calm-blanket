@@ -1,0 +1,54 @@
+<div class="container m">
+<div class="About">
+  <div class="About__heading">{{section.settings.heading}}</div>
+  <div class="About__body">{{section.settings.body}}</div>
+  {% for block in section.blocks %}
+    <img src="{{block.settings.image | img_url:'master'}}" alt="{{block.settings.image.alt}}">
+    <caption>{{block.settings.label}}</caption>
+  {% endfor %}
+</div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "About",
+    "class": "homepage-about",
+    "settings":[
+      {
+        "id":"heading",
+        "type":"text",
+        "label":"Heading"
+      },
+      {
+        "id":"body",
+        "type":"richtext",
+        "label":"Body"
+      }
+    ],
+    "blocks":[
+      {
+        "type":"benefit",
+        "name":"Benefit",
+        "settings":[
+          {
+            "type":"image_picker",
+            "label":"image",
+            "id":"image" 
+          },
+          {
+            "type":"text",
+            "label":"Label",
+            "id":"label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "About",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

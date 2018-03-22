@@ -61,6 +61,8 @@ sections/footer.liquid:
   development: 2018-03-21T10:01:40-04:00   4bfc4543a9780ccd5042767f5dbd40ad
 sections/header.liquid:
   development: 2018-03-21T21:16:34-04:00   7f6bd5a1ec9e27f58ceb77bf1dfa5512
+sections/homepage-about.liquid:
+  development: 2018-03-21T22:50:28-04:00   0a541a97f353cb265c48eeb06ceda5b5
 sections/homepage-hero.liquid:
   development: 2018-03-21T21:51:59-04:00   6f56d6015c3f034544b6ea573b6a2822
 sections/page-cart.liquid:
