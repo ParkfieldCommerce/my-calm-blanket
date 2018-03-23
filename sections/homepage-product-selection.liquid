@@ -1,0 +1,76 @@
+<div class="ProductSelection__container">
+<div class="ProductSelection">
+  <img class="ProductSelection__image" src="{{section.settings.image | img_url:'master'}}" alt="{{section.settings.image.alt}}">
+  <h2 class="ProductSelection__heading">{{section.settings.heading}}</h2>
+  <p class="ProductSelection__body">{{section.settings.body}}</p>
+  <div class="ProductSelection__table">
+    <ul class="ProductSelection__body-weights">
+      <li class="ProductSelection__table-heading">Body weight</li>
+      {% for block in section.blocks %}
+        <li class="ProductSelection__table-listing ProductSelection__table-listing--body">{{block.settings.title}}</li>
+      {% endfor %}
+    </ul>
+    <ul class="ProductSelection__blanket-weights">
+      <li class="ProductSelection__table-heading">Blanket weight</li>
+      {% for variant in all_products[section.settings.product].variants %}
+      <li class="ProductSelection__table-listing ProductSelection__table-listing--blanket">
+        <div class="ProductSelection__table-listing__title">{{variant.title}}</div> 
+        <a class="ProductSelection__button Button Button--transparent" href="{{variant.url}}">
+          <span class="choose">Choose</span>
+          <span class="variant-title">{{variant.title}}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Selection",
+    "class": "homepage-product-selection",
+    "settings":[
+      {
+        "type":"product",
+        "id":"product",
+        "label":"Product"
+      },
+      {
+        "id":"heading",
+        "type":"text",
+        "label":"Heading"
+      },
+      {
+        "id":"body",
+        "type":"textarea",
+        "label":"Description"
+      },
+      {
+        "id":"image",
+        "type":"image_picker",
+        "label":"Image"
+      }
+    ],
+    "blocks":[
+      {
+        "type":"benefit",
+        "name":"Body Weight",
+        "settings":[
+          {
+            "type":"text",
+            "label":"Body Weight",
+            "id":"title",
+            "info":"Bodyweight corresponding to the variant, the bodyweight must be in the same order as the variants listed on the product page"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Selection",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

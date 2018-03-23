@@ -1,0 +1,45 @@
+<div class="container m">
+<div class="Video__wrapper">
+  <video class="Video js-Video" controls>
+    <source src="{{section.settings.webm_video_url}}" type="video/webm">
+    <source src="{{section.settings.mp4_video_url}}" type="video/mp4">
+  </video>
+  <div class="Video__cover"></div>
+</div>
+</div>
+<script>
+  $(document).ready(function(){
+   $('.js-Video').bind('contextmenu',function() { return false; });
+});
+</script>
+{% schema %}
+  {
+    "name": "Video",
+    "class": "homepage-video",
+    "settings":[
+      {
+        "id":"video_cover",
+        "type":"image_picker",
+        "label":"Cover Image"
+      },
+      {
+        "id":"mp4_video_url",
+        "type":"text",
+        "label":"MP4 Video Url",
+        "info":"In Shopify go to Settings -> Files -> Upload, to upload the video, and then copy and paste the URL of the video here"
+      },
+      {
+        "id":"webm_video_url",
+        "type":"text",
+        "label":"Webm Video Url",
+        "info":"In Shopify go to Settings -> Files -> Upload, to upload the video, and then copy and paste the URL of the video here"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,14 +1,39 @@
-<div class="container m">
+<div class="container m About__container">
 <div class="About">
-  <div class="About__heading">{{section.settings.heading}}</div>
-  <div class="About__body">{{section.settings.body}}</div>
-  {% for block in section.blocks %}
-    <img src="{{block.settings.image | img_url:'master'}}" alt="{{block.settings.image.alt}}">
-    <caption>{{block.settings.label}}</caption>
-  {% endfor %}
+  <div class="About__content">
+    <h2 class="About__heading">{{section.settings.heading}}</h2>
+    <div class="About__body">{{section.settings.body}}</div>
+    <div class="About__benefits js-About__benefits-slider">
+      {% for block in section.blocks %}
+      <figure class="About__benefit">
+        <img src="{{block.settings.image | img_url:'master'}}" alt="{{block.settings.image.alt}}">
+        <figcaption>{{block.settings.label}}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    <div class="About__dots js-About__dots"></div>
+  </div>
 </div>
 </div>
 
+<script>
+  $('.js-About__benefits-slider').slick({
+    arrows: false,
+    dots: true,
+    appendDots:'.js-About__dots',
+    slidesToShow: 3,
+    responsive:[
+      {
+        breakpoint: 768,
+        settings:{
+          slidesToShow: 1,
+          autoplay: true,
+          fade: true
+        }
+      }
+    ]
+  });
+</script>
 
 {% schema %}
   {

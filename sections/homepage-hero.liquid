@@ -1,7 +1,7 @@
 <div class="Hero">
-  <a href="{{section.settings.button_url}}">
+  <a class="Hero__link" href="{{section.settings.button_url}}">
     <div class="Hero__image"></div>
-    <div class="Hero__content" data-aos="fade-up" data-aos-anchor-placement="top-center">
+    <div class="Hero__content">
       <h2 class="Hero__heading">{{section.settings.heading_line1}}<br>{{section.settings.heading_line2}}</h2>
       <span class="Hero__button Button Button--main">{{section.settings.button_text}}</span>
     </div>
@@ -13,14 +13,16 @@
   }
   
   .Hero .Hero__image{
-    padding-top:{{section.settings.desktop_padding_top}}%;
+    min-height:  695px;
+    height: {{section.settings.desktop_padding_top}}vh;
     background-position: {{section.settings.desktop_horizontal_position}}% 50%;
     background-image: url('{{section.settings.image | img_url:'master'}}');
   }
 
   @media screen and (max-width: 900px){
     .Hero .Hero__image{
-      padding-top:{{section.settings.mobile_padding_top}}%;
+      min-height:  222px;
+      height: {{section.settings.mobile_padding_top}}vh;
       background-position: {{section.settings.mobile_horizontal_position}}% 50%;
       background-image: url('{{section.settings.mobile_image | img_url:'master'}}');
     }
@@ -89,7 +91,7 @@
           "step":      1,
           "unit":      "%",
           "label":     "Desktop Image Height",
-          "default":   49
+          "default":   70
       },
       {
           "type":   "range",
@@ -109,12 +111,12 @@
       {
           "type":   "range",
           "id":     "mobile_padding_top",
-          "min":       50,
-          "max":       150,
+          "min":       0,
+          "max":       100,
           "step":      1,
           "unit":      "%",
           "label":     "Mobile Image Height",
-          "default":   135
+          "default":   26
       },
       {
           "type":   "range",

@@ -83,7 +83,9 @@
       "header": {
         "type": "header",
         "settings": {
-          "show-payment-options": true
+          "logo": "shopify:\/\/shop_images\/logo_78d324e3-ccec-490f-8afd-98248661eb8d.png",
+          "designed_text": "Designed in the US",
+          "designed_image": "shopify:\/\/shop_images\/usa.png"
         }
       },
       "footer": {
@@ -116,9 +118,63 @@
           "bg_color": "#3b52b0",
           "text_color": "#ffffff"
         }
+      },
+      "1521681746232": {
+        "type": "homepage-hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Calm_hero.jpg",
+          "mobile_image": "shopify:\/\/shop_images\/Calm_hero.jpg",
+          "heading_line1": "The blanket that",
+          "heading_line2": "gently hugs you",
+          "color": "#3b52b0",
+          "button_text": "Shop Now",
+          "button_url": "shopify:\/\/collections\/frontpage",
+          "desktop_padding_top": 49,
+          "desktop_horizontal_position": 50,
+          "mobile_padding_top": 89,
+          "mobile_horizontal_position": 6
+        }
+      },
+      "1521686930464": {
+        "type": "homepage-about",
+        "blocks": {
+          "1521686976264": {
+            "type": "benefit",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Bed_vector.png",
+              "label": "Proven to improve rest"
+            }
+          },
+          "1521686987807": {
+            "type": "benefit",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Meds_vector.png",
+              "label": "Helps with ADHD, Anxiety, and Stress"
+            }
+          },
+          "1521687001788": {
+            "type": "benefit",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/blanket_vecotr.png",
+              "label": "Keeps You Warm"
+            }
+          }
+        },
+        "block_order": [
+          "1521686976264",
+          "1521686987807",
+          "1521687001788"
+        ],
+        "settings": {
+          "heading": "Meet My Calm Blanket",
+          "body": "<p>When under the blanket, it gives us that great feeling of being hugged or cuddled. My Calm Blanket exerts DTPS (Deep Touch Pressure Stimulation) which promotes the production of Serotonin &amp; Melatonin.<\/p>\n<p><\/p>\n<p>These natural chemicals in our body regulate our mood and overall sense of calm, helping us settle down from stressful or anxious situations, relax faster and sleep deeper.<\/p>\n<p><\/p>"
+        }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+      "1521681746232",
+      "1521686930464"
+    ]
   },
   "presets": {
     "Cool": {
