@@ -4,13 +4,19 @@
     <source src="{{section.settings.webm_video_url}}" type="video/webm">
     <source src="{{section.settings.mp4_video_url}}" type="video/mp4">
   </video>
-  <div class="Video__cover"></div>
+  <div class="Video__cover js-Video__cover" style="background-image:url('{{section.settings.video_cover | img_url: 'master'}}');">
+    
+  </div>
 </div>
 </div>
 <script>
   $(document).ready(function(){
-   $('.js-Video').bind('contextmenu',function() { return false; });
-});
+    $('.js-Video__cover').click(function(){
+      $(this).addClass('Video__cover--hide');
+      var video = document.querySelector('.js-Video');
+      video.play();
+   });
+  });
 </script>
 {% schema %}
   {

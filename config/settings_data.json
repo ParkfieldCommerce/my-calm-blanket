@@ -129,9 +129,9 @@
           "color": "#3b52b0",
           "button_text": "Shop Now",
           "button_url": "shopify:\/\/collections\/frontpage",
-          "desktop_padding_top": 49,
+          "desktop_padding_top": 70,
           "desktop_horizontal_position": 50,
-          "mobile_padding_top": 89,
+          "mobile_padding_top": 22,
           "mobile_horizontal_position": 6
         }
       },
@@ -167,13 +167,64 @@
         ],
         "settings": {
           "heading": "Meet My Calm Blanket",
-          "body": "<p>When under the blanket, it gives us that great feeling of being hugged or cuddled. My Calm Blanket exerts DTPS (Deep Touch Pressure Stimulation) which promotes the production of Serotonin &amp; Melatonin.<\/p>\n<p><\/p>\n<p>These natural chemicals in our body regulate our mood and overall sense of calm, helping us settle down from stressful or anxious situations, relax faster and sleep deeper.<\/p>\n<p><\/p>"
+          "body": "<p>When under the blanket, it gives us that great feeling of being hugged or cuddled. My Calm Blanket exerts DTPS (Deep Touch Pressure Stimulation) which promotes the production of Serotonin &amp; Melatonin.<\/p>\n<p>These natural chemicals in our body regulate our mood and overall sense of calm, helping us settle down from stressful or anxious situations, relax faster and sleep deeper.<\/p>"
+        }
+      },
+      "1521736295736": {
+        "type": "homepage-product-selection",
+        "blocks": {
+          "1521736504115": {
+            "type": "benefit",
+            "settings": {
+              "title": "85-109 lbs"
+            }
+          },
+          "1521736515957": {
+            "type": "benefit",
+            "settings": {
+              "title": "110-170 lbs"
+            }
+          },
+          "1521736524888": {
+            "type": "benefit",
+            "settings": {
+              "title": "171-230 lbs"
+            }
+          },
+          "1521736532624": {
+            "type": "benefit",
+            "settings": {
+              "title": "230+ lbs"
+            }
+          }
+        },
+        "block_order": [
+          "1521736504115",
+          "1521736515957",
+          "1521736524888",
+          "1521736532624"
+        ],
+        "settings": {
+          "product": "my-calm-blanket",
+          "heading": "Choosing a weight",
+          "body": "Designed to be ~10% of your body weight",
+          "image": "shopify:\/\/shop_images\/blanket_transparent.png"
+        }
+      },
+      "1521750602001": {
+        "type": "homepage-video",
+        "settings": {
+          "video_cover": "shopify:\/\/shop_images\/video.png",
+          "mp4_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4939\/4234\/files\/final_15_V1.mp4?11116735233269565645",
+          "webm_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4939\/4234\/files\/final_15_V1.webm?11116735233269565645"
         }
       }
     },
     "content_for_index": [
       "1521681746232",
-      "1521686930464"
+      "1521686930464",
+      "1521736295736",
+      "1521750602001"
     ]
   },
   "presets": {

@@ -605,6 +605,24 @@ $gutter: 10px;
 }
 
 //Homepage Video
+.Video__wrapper{
+  position: relative;
+}
 .Video{
   width: 100%;
+}
+.Video__cover{
+  z-index: 2;
+  opacity: 1;
+  transition: opacity .3s, z-index 1s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+}
+.Video__cover--hide{
+  opacity: 0;
+  z-index: -1;
 }
