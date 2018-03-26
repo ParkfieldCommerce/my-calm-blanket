@@ -1,0 +1,41 @@
+<div class="container s Guarantee__container">
+<div class="Guarantee">
+  <div class="Guarantee__image">
+    <img src="{{section.settings.image | img_url:'master'}}" alt="{{section.settings.image.alt}}">
+  </div>
+  <div class="Guarantee__content">
+    <h2 class="Guarantee__heading">{{section.settings.heading}}</h2>
+    <p class="Guarantee__body">{{section.settings.body}}</p>
+  </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Guarantee",
+    "class": "homepage-guarantee",
+    "settings":[
+      {
+        "id":"heading",
+        "type":"text",
+        "label":"Heading"
+      },
+      {
+        "id":"body",
+        "type":"textarea",
+        "label":"Body"
+      },
+      {
+        "id":"image",
+        "type":"image_picker",
+        "label":"Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Guarantee Banner",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,91 @@
+{% assign quickAddProduct = all_products[section.settings.product] %}
+<div class="container m ProductQuickAdd__container">
+  <div class="ProductQuickAdd">
+    <div class="ProductQuickAdd__content">
+      <h2 class="ProductQuickAdd__title">{{quickAddProduct.title}}</h2>
+      <div class="ProductQuickAdd__prices">
+        <span class="js-new-price ProductQuickAdd__new-price">Now: {{quickAddProduct.selected_or_first_available_variant.price | money}}</span>
+        <span class="js-old-price ProductQuickAdd__old-price">Regular {{quickAddProduct.selected_or_first_available_variant.compare_at_price | money}}</span>
+      </div>
+      <p class="ProductQuickAdd__description">{{section.settings.text}}</p>
+      <div class="ProductQuickAdd__variants">
+        {% for variant in quickAddProduct.variants %}
+          {% if variant.available %}
+          <input class="js-productQuickAddOption ProductQuickAdd__option" type="radio" id="ProductQuickAdd-{{variant.id}}" {% if forloop.first %}checked{% endif %} 
+            name="ProductQuickAdd" 
+            value="{{variant.id}}" 
+            data-price="{{variant.price | money}}" 
+            data-compare-price="{{variant.compare_at_price | money }}"
+          >
+          <label for="ProductQuickAdd-{{variant.id}}" class="js-ProductQuickAddLabel ProductQuickAdd__label {% if forloop.first %}ProductQuickAdd__label--active{% endif %}">{{variant.title}}</label>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <button class="ProductQuickAdd__submit Button Button--main js-ProductQuickAdd__submit">Add to cart</button>
+    </div>
+    <div class="ProductQuickAdd__image"></div>
+  </div>
+</div>
+<style>
+  .ProductQuickAdd__image{
+    background-image: url('{{section.settings.image | img_url:'master'}}');
+  }
+</style>
+<script>
+  //Option Switching
+  $('.js-productQuickAddOption').change(function(){
+    $('.js-ProductQuickAddLabel').removeClass('ProductQuickAdd__label--active');
+    var variantId = $(this).val();
+    var price = $(this).data('price');
+    var comparePrice = $(this).data('compare-price');
+
+    $('.js-new-price').text('Now: ' + price);
+
+    if(comparePrice){
+      $('.js-old-price').text('Regular: ' + comparePrice);
+    }else{
+      $('.js-old-price').text('');
+    }
+
+    $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('ProductQuickAdd__label--active');
+  });
+
+  //Add to Cart Logic
+  $('.js-ProductQuickAdd__submit').click(function(){
+    var variantId = $('.js-productQuickAddOption:checked').val();
+    CartJS.addItem(variantId, 1, {}, {
+      "success": function(data, textStatus, jqXHR) {
+        window.location.href = '/cart';
+      }
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Product Quick Add",
+    "class": "homepage-product-quickadd",
+    "settings":[
+      {
+        "type":"image_picker",
+        "label":"Background Image",
+        "id":"image"
+      },
+      {
+        "id":"product",
+        "type":"product",
+        "label":"Product"
+      },
+      {
+        "id":"text",
+        "type":"text",
+        "label":"Selection Description"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Quick Add",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

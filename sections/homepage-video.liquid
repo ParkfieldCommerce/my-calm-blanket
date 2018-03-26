@@ -1,11 +1,13 @@
-<div class="container m">
+<div class="container m Video__container">
 <div class="Video__wrapper">
   <video class="Video js-Video" controls>
     <source src="{{section.settings.webm_video_url}}" type="video/webm">
     <source src="{{section.settings.mp4_video_url}}" type="video/mp4">
   </video>
   <div class="Video__cover js-Video__cover" style="background-image:url('{{section.settings.video_cover | img_url: 'master'}}');">
-    
+    <div class="Video__play">
+      {% include 'icons' with icon:'play' %}
+    </div>  
   </div>
 </div>
 </div>

@@ -1,1 +1,2 @@
-import '../assets/app.scss';
+CartJS.init({{ cart | json }});
+
