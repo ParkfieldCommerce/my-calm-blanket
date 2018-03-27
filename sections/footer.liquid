@@ -1,130 +1,93 @@
-<footer>
-  this is the footer
+<footer class="Footer">
+  <div class="container m">
+    <div class="Footer__columns">
+      <div class="Footer__column">
+        <img class="Footer__logo" src="{{section.settings.logo | img_url:'master'}}" alt="{{section.settings.logo.alt}}">
+        <div class="Footer__social-icons">
+          {% if settings.social-facebook-url != blank %}
+          <a class="Footer__social-icon" href="{{settings.social-facebook-url}}"><i class="fa fa-facebook"></i></a>
+          {% endif %}
+          {% if settings.social-twitter-url != blank %}
+          <a class="Footer__social-icon" href="{{settings.social-twitter-url}}"><i class="fa fa-twitter"></i></a>
+          {% endif %}
+          {% if settings.social-instagram-url != blank %}
+          <a class="Footer__social-icon" href="{{settings.social-instagram-url}}"><i class="fa fa-instagram"></i></a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="Footer__column">
+        {% for link in linklists[section.settings.footer-link-list-1].links %}
+          <a href="{{link.url}}" class="Footer__link">{{link.title}}</a>
+        {% endfor %}
+      </div>
+      <div class="Footer__column">
+        {% for link in linklists[section.settings.footer-link-list-2].links %}
+          <a href="{{link.url}}" class="Footer__link">{{link.title}}</a>
+        {% endfor %}
+      </div>
+      <div class="Footer__column">
+        {% form 'customer' %}
+          {{ form.errors | default_errors }}
+          {% if form.posted_successfully? %}
+            <p class="Footer__success-message">{{ 'layout.footer.signup_success' | t }}</p>
+          {% else %}
+            <h3 class="Footer__signup-heading">{{ 'layout.footer.signup_title' | t }}</h3>
+            <div class="Footer__email-form">
+            <input type="email"
+                   value="{% if customer %}{{ customer.email }}{% endif %}"
+                   name="contact[email]"
+                   id="Email"
+                   class="Footer__email"
+                   aria-label="{{ 'form.email' | t }}"
+                   autocorrect="off"
+                   autocapitalize="off"
+                   placeholder="Enter email address">
+            <input type="hidden"
+                   name="contact[tags]"
+                   value="newsletter">
+            <input type="submit"
+                   class="Footer__subscribe"
+                   name="subscribe"
+                   id="subscribe"
+                   value="{{ 'layout.footer.signup' | t }}">
+            </div>
+          {% endif %}
+        {% endform %}
+      </div>
+    </div>
+    <div class="Footer__info">
+      <p class="Footer__copyright">Copyright &copy; {{ 'now' | date: "%Y" }} <span class="line line--1">|</span> {{shop.name}} <span class="line line--2">|</span> Design and Build by Parkfield Commerce</p>
+      <div class="Footer__payments">
+        {% include 'payment-icons' %}
+      </div>
+    </div>
+  </div>
 </footer>
 
 {% schema %}
 {
   "name": "Footer",
-  "max_blocks": 3,
   "settings": [
+    {
+      "type":"image_picker",
+      "id":"logo",
+      "label":"Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "footer-link-list-1",
+      "label": "Menu 1"
+    },
+    {
+      "type": "link_list",
+      "id": "footer-link-list-2",
+      "label": "Menu 2"
+    },
     {
       "type": "checkbox",
       "id": "show-payment-options",
       "label": "Enable payment icons",
       "default": true
-    }
-  ],
-  "blocks": [
-    {
-      "type": "menus",
-      "name": "Menus",
-      "settings": [
-        {
-          "type": "link_list",
-          "id": "footer-link-list-1",
-          "label": "Menu 1"
-        },
-        {
-          "type": "link_list",
-          "id": "footer-link-list-2",
-          "label": "Menu 2"
-        }
-      ],
-      "limit": 1
-    },
-    {
-      "type": "featured-content",
-      "name": "Rich text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "richtext",
-          "id": "footer-text-box",
-          "label": "Text"
-        }
-      ],
-      "limit": 1
-    },
-    {
-      "type": "tweet",
-      "name": "Twitter feed",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "text",
-          "id": "twitter-id",
-          "label": "Username",
-          "info": "Note: Don't include the '@' symbol."
-        },
-        {
-          "type": "checkbox",
-          "id": "twitter-retweets",
-          "label": "Show retweets"
-        }
-      ],
-      "limit": 1
-    },
-    {
-      "type": "instagram",
-      "name": "Instagram feed",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "text",
-          "id": "instagram-access-token",
-          "label": "Access token ([?](http:\/\/instagram.pixelunion.net))"
-        },
-        {
-          "type": "select",
-          "id": "instagram-count",
-          "label": "Number of images",
-          "options": [
-            {
-              "value": "3",
-              "label": "3"
-            },
-            {
-              "value": "6",
-              "label": "6"
-            }
-          ]
-        }
-      ],
-      "limit": 1
-    },
-    {
-      "type": "connect",
-      "name": "Newsletter / social links",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "checkbox",
-          "id": "enable-mailing-list",
-          "label": "Enable newsletter"
-        },
-        {
-          "type": "checkbox",
-          "id": "enable-social-links",
-          "label": "Enable social links"
-        }
-      ],
-      "limit": 1
     }
   ]
 }

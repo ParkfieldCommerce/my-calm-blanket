@@ -70,6 +70,9 @@
       "back_to": "Back to {{ tier }}"
     },
     "footer": {
+      "signup_title":"Get special invitations & discounts",
+      "signup":"Sign up",
+      "signup_success":"Thank you for signing up",
       "twitter_title": "Twitter",
       "instagram_title": "Instagram",
       "newsletter_title": "Newsletter",

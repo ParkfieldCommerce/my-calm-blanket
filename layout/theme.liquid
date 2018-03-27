@@ -42,6 +42,7 @@
 
   <!-- Theme CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   {{ 'app.scss.css' | asset_url | stylesheet_tag }}
 
@@ -82,8 +83,7 @@
       {{ content_for_layout }}
     </div>
   </div>
-
-
+  {% section 'footer' %}
   <!-- Scripts -->
 
 

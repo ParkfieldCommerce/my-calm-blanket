@@ -234,6 +234,45 @@
           "body": "My Calm Blanket has a very generous refund policy. \nWe will refund 100% of your money if you're not satisfied for any reason.",
           "image": "shopify:\/\/shop_images\/gurantee.png"
         }
+      },
+      "1522111122837": {
+        "type": "homepage-info-banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Calm_image_3.png",
+          "heading": "Reduce stress. Relieve anxiety.",
+          "body": "A weighted blanket engineered to be 7-12% of your body weight to naturally reduce stress, soothe aches and pains, and increase relaxation. It responds to your temperature, weight and shape for personalized comfort and support.",
+          "button_text": "Learn more",
+          "button_url": "shopify:\/\/collections\/all"
+        }
+      },
+      "1522117910016": {
+        "type": "homepage-reviews",
+        "blocks": {
+          "1522117916212": {
+            "type": "review",
+            "settings": {
+              "title": "\"My Miracle\"",
+              "body": "“The moment I laid down and put it on I felt instantly better!”",
+              "name": "Bobby, CT"
+            }
+          },
+          "1522117941836": {
+            "type": "review",
+            "settings": {
+              "title": "\"My Other Miracle\"",
+              "body": "“The moment I laid down and put it on I felt instantly better!”",
+              "name": "Robby, TC"
+            }
+          }
+        },
+        "block_order": [
+          "1522117916212",
+          "1522117941836"
+        ],
+        "settings": {
+          "button_text": "Read more reviews",
+          "button_url": "shopify:\/\/collections\/all"
+        }
       }
     },
     "content_for_index": [
@@ -242,7 +281,9 @@
       "1521736295736",
       "1521750602001",
       "1522080503047",
-      "1522097014067"
+      "1522097014067",
+      "1522111122837",
+      "1522117910016"
     ]
   },
   "presets": {

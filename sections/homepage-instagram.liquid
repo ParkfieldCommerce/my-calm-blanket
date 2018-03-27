@@ -1,0 +1,63 @@
+<!-- homepage-instagram.liquid -->
+<div class="Instagram">
+  <a target="_blank" rel="nofollow" href="{{section.settings.heading_url}}" class="Instagram__heading">{{section.settings.section_heading}}</a>
+  <div class="js-instagram"></div>
+</div>
+{{'instagramLite.js' | asset_url | script_tag }}
+
+<script>
+  function fixInstagramSize(){
+    $('.js-instagram').slick({
+      speed: 40000,
+      autoplay: true,
+      autoplaySpeed: 0,
+      cssEase: 'linear',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: true,
+      arrows: false
+    })
+  }
+
+  $('.js-instagram').instagramLite({
+    accessToken: '{{section.settings.access_token}}',
+    limit: 12,
+    urls: false,
+    success: fixInstagramSize
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Instagram",
+  "class":"homepage-instagram",
+  "settings":[
+    {
+      "type":"header",
+      "content":"General Settings"
+    },
+    {
+      "id": "section_heading",
+      "type": "text",
+      "label": "Section Heading"
+    },
+    {
+      "id":"heading_url",
+      "type":"url",
+      "label":"Section Heading URL"
+    },
+    {
+      "id":"access_token",
+      "type":"textarea",
+      "label":"Instagram Access Token",
+      "info":"The access token may expire after sometime, go here to generate a new one http://instagram.pixelunion.net"
+    }
+  ],
+  "presets":[{
+      "name": "Instagram",
+      "category": "Homepage"
+    }
+  ]
+}
+{% endschema %}
+

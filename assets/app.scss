@@ -14,6 +14,13 @@ $bg-alt: #F6F6F6;
 $bg-dark: $accent-color;
 $border-color: #E6E6E6;
 //Mixins
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
 @mixin minQuery($resolution){
   @media screen and (min-width: $resolution){
     @content;
@@ -550,6 +557,9 @@ $gutter: 10px;
 }
 
 @include maxQuery(1000px){
+  .ProductSelection__container{
+    padding: 0 8.333%;
+  }
   .ProductSelection__heading{
     font-size: 2.4rem;
   }
@@ -602,7 +612,11 @@ $gutter: 10px;
     }
   }
 }
-
+@include maxQuery($xs){
+  .ProductSelection__container{
+    padding: 0 5px;
+  }
+}
 //Homepage Video
 .Video__container{
   margin-bottom: 100px;
@@ -906,12 +920,24 @@ $gutter: 10px;
 .Reviews__container{
   padding: 0;
 }
+.Reviews__slider-container{
+  position: relative;
+}
+.Reviews__arrow{
+  position: absolute;
+  top: 50%;
+  @include prefix(transform, translateY(-50%));
+}
+.Reviews__arrow--prev{
+  left: 0;
+}
+.Reviews__arrow--next{
+  right: 0;
+}
 .Reviews{
   margin-top: 80px;
-  padding: 0 8.33%;
+  padding: 80px 8.33%;
   background-color: $bg-alt;
-  padding-top: 60px;
-  padding-bottom: 180px;
   text-align: center;
 }
 .Review__title{
@@ -925,4 +951,235 @@ $gutter: 10px;
 .Review__name{
   @include font-light(1.8rem);
   color: $body-color;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+.Review__stars{
+  @include flex();
+  @include justify-content(center);
+  margin-bottom: 30px;
+}
+.Reviews__button{
+  width: 259px;
+  @include inline-flex();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+@include maxQuery($s){
+  .Reviews{
+    margin-top: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .Review__title{
+    font-size: 2.4rem;
+  }
+  .Review__body{
+    font-size: 1.8rem;
+  }
+  .Reviews__arrow{
+    display: none;
+  }
+}
+
+/* Homepage Instagram */
+.Instagram{
+  margin-top: 60px;
+  margin-bottom: 40px;
+  img{
+    max-width: 250px;
+    margin: 0 10px;
+  }
+}
+.Instagram__heading{
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
+  @include font-light(2.4rem);
+}
+@include maxQuery($s){
+  .Instagram{
+    display: none;
+  }
+}
+/* Footer */
+.Footer{
+  padding: 60px 8.3333% 20px;
+  background-color: $accent-color;
+  color: white;
+  svg{
+    fill: white;
+  }
+}
+.Footer__columns{
+  @include flex();
+}
+.Footer__column{
+  width: 16.6667%;
+}
+.Footer__column:last-child{
+  width: 50%;
+  justify-self: flex-end;
+  form{
+    max-width: 75%;
+    margin-left: auto;
+  }
+}
+.Footer__logo{
+  margin-bottom: 30px;
+}
+
+.Footer__social-icon{
+  color: white;
+  margin-right: 10px;
+  &:hover{
+    color: #859DFF;
+  }
+}
+.Footer__link{
+  margin-bottom: 30px;
+  display: block;
+  color: white;
+  &:hover{
+    color: #859DFF;
+  }
+}
+.Footer__email-form{
+  position: relative;
+}
+
+.Footer__signup-heading{
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+.Footer__email{
+  @include placeholder{
+    opacity: 0;
+  };
+}
+.Footer__success-message{
+  color: white;
+}
+input[type="email"].Footer__email{
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  border-radius: 0;
+  color: white;
+  @include font-light(1.4rem);
+
+}
+input[type="submit"].Footer__subscribe{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: $accent-color;
+  @include font-reg(1.8rem);
+  text-transform: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+}
+.Footer__info{
+  @include flex();
+  @include align-items(flex-start);
+  margin-top: 60px;
+}
+.Footer__copyright{
+  font-size: 1.4rem;
+  width: 60%;
+  color: white;
+  margin: 0;
+}
+.Footer__payments{
+  width: 40%;
+}
+.line--1{
+  display: none;
+}
+@include maxQuery(850px){
+  .Footer{
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+  .Footer__columns{
+    flex-flow: row wrap;
+  }
+  .Footer__column:nth-child(1){
+    order: 4;
+    width: 100%;
+    @include flex();
+    @include align-items(center);
+    @include justify-content(center);
+    flex-flow: column-reverse wrap;
+
+  }
+  .Footer__column:nth-child(2){
+    order: 3;
+    width: 50%;
+  }
+  .Footer__column:nth-child(3){
+    order: 2;
+    width: 50%;
+  }
+  .Footer__column:nth-child(4){
+    order: 1;
+    width: 100%;
+    form{
+      max-width: 100%;
+    }
+  }
+  .Footer__logo{
+    margin-bottom: 0;
+  }
+  .Footer__link{
+    padding-left: 20px;
+  }
+  .Footer__social-icons{
+    margin-bottom: 60px;
+  }
+  .Footer__social-icon{
+    font-size: 2.4rem;
+    margin: 0px 20px;
+  }
+  .Footer__signup-heading{
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+  }
+  input[type="submit"].Footer__subscribe{
+    position: static;
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: white;
+    color: $accent-color;
+  }
+  input[type="email"].Footer__email{
+    padding-left: 0;
+    @include placeholder{
+      color: white;
+      opacity: 1;
+      @include font-reg(1.8rem);
+    }
+  }
+  .Footer__info{
+    margin-top: 20px;
+    flex-flow: row wrap;
+  }
+  .Footer__copyright,
+  .Footer__payments{
+    text-align: center;
+    width: 100%;
+  }
+  .line--1{
+    display: inline;
+  }
+  .line--2{
+    display: none;
+  }
+  .payment-options{
+    text-align: center;
+  }
 }

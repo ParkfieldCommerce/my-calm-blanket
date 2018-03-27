@@ -1,24 +1,47 @@
 <div class="container m Reviews__container">
-  <div class="Reviews js-Reviews">
-    {% for block in section.blocks %}
-    <div class="Review">
-      <h3 class="Review__title">{{block.settings.title}}</h3>
-      <p class="Review__body">{{block.settings.body}}</p>
-      <span class="Review__name">-{{block.settings.name}}</span>
-      <div class="Review__stars">
-        {% include 'icons' with icon:'star' %}
+  <div class="Reviews">
+    <div class="Reviews__slider-container">
+    <div class="js-Reviews">
+      {% for block in section.blocks %}
+      <div class="Review">
+        <h3 class="Review__title">{{block.settings.title}}</h3>
+        <p class="Review__body">{{block.settings.body}}</p>
+        <span class="Review__name">-{{block.settings.name}}</span>
+        <div class="Review__stars">
+          {% for i in (1..5) %}
+          <img src="{{'Star.png' | asset_url}}" alt="Star"> 
+          {% endfor %}
+        </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+    <a href="{{section.settings.button_url}}" class="Reviews__button Button Button--main">{{section.settings.button_text}}</a>
+    <img class="Reviews__arrow Reviews__arrow--prev" src="{{'left.png' | asset_url}}" alt="Prev Review"> 
+    <img class="Reviews__arrow Reviews__arrow--next" src="{{'right.png' | asset_url}}" alt="Next Review"> 
+    </div> 
   </div>
 </div>
-<!-- <script>
+<script>
   $(document).ready(function(){
     $('.js-Reviews').slick({
-      slidesToShow: 1
+      slidesToShow: 1,
+      prevArrow:'.Reviews__arrow--prev',
+      nextArrow:'.Reviews__arrow--next',
+      fade: true,
+      speed:500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false
+          }
+        }
+      ]
     });
   })
-</script> -->
+</script>
 {% schema %}
   {
     "name": "Reviews",

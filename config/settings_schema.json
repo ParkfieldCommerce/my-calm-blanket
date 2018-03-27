@@ -1292,33 +1292,9 @@
       },
       {
         "type": "text",
-        "id": "social-kickstarter-url",
-        "label": "Kickstarter",
-        "info": "https:\/\/www.kickstarter.com\/projects\/user\/project"
-      },
-      {
-        "type": "text",
-        "id": "social-vimeo-url",
-        "label": "Vimeo",
-        "info": "https:\/\/vimeo.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social-youtube-url",
-        "label": "YouTube",
-        "info": "https:\/\/www.youtube.com\/user\/shopify"
-      },
-      {
-        "type": "text",
         "id": "social-email-address",
         "label": "Email Address",
         "info": "support@shopify.com"
-      },
-      {
-        "type": "text",
-        "id": "social-rss-url",
-        "label": "RSS",
-        "info": "http:\/\/storefront.myshopify.com\/blogs\/news.atom"
       },
       {
         "type": "header",
