@@ -218,13 +218,31 @@
           "mp4_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4939\/4234\/files\/final_15_V1.mp4?11116735233269565645",
           "webm_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0014\/4939\/4234\/files\/final_15_V1.webm?11116735233269565645"
         }
+      },
+      "1522080503047": {
+        "type": "homepage-product-quickadd",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Calm_image_2.png",
+          "product": "my-calm-blanket",
+          "text": "Choose weight  (~10% of body weight):"
+        }
+      },
+      "1522097014067": {
+        "type": "homepage-guarantee",
+        "settings": {
+          "heading": "Our 100% guarantee",
+          "body": "My Calm Blanket has a very generous refund policy. \nWe will refund 100% of your money if you're not satisfied for any reason.",
+          "image": "shopify:\/\/shop_images\/gurantee.png"
+        }
       }
     },
     "content_for_index": [
       "1521681746232",
       "1521686930464",
       "1521736295736",
-      "1521750602001"
+      "1521750602001",
+      "1522080503047",
+      "1522097014067"
     ]
   },
   "presets": {

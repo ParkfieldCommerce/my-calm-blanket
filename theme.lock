@@ -2,7 +2,7 @@
 assets/app.js:
   development: 2018-03-26T12:42:59-04:00
 assets/app.scss:
-  development: 2018-03-26T16:56:20-04:00   5adae5450ac528378ad532c40a248f09
+  development: 2018-03-26T22:49:00-04:00   732c4cf7011b43cf28748a827d19d7af
 assets/crimson-bold-webfont.eot:
   development: 2018-03-21T09:41:47-04:00   87728e4677fcdcf3ab878bbbabf84579
 assets/crimson-bold-webfont.woff:
@@ -50,7 +50,7 @@ assets/theme.js.liquid:
 assets/theme.scss.liquid:
   development: 2018-03-21T09:41:50-04:00   f51a9fbbf70d8b20a0ec4b3ca15be819
 config/settings_data.json:
-  development: 2018-03-22T16:38:09-04:00   cc11dad5d13b21b8293a63310d17944e
+  development: 2018-03-26T16:46:22-04:00   127202801303958526d35b44fa3f4455
 config/settings_schema.json:
   development: 2018-03-21T10:02:28-04:00   bc4ffbd544e2e0ac87bd511cd1aec4fb
 layout/theme.liquid:
@@ -67,10 +67,14 @@ sections/homepage-guarantee.liquid:
   development: 2018-03-26T16:47:56-04:00   95709aa88a8e714c248962c07459df03
 sections/homepage-hero.liquid:
   development: 2018-03-22T12:10:53-04:00   674286ea6b92d690ef2e56c0304156a9
+sections/homepage-info-banner.liquid:
+  development: 2018-03-26T20:52:28-04:00   c060849a14a601e8ea24d7900b9c14a0
 sections/homepage-product-quickadd.liquid:
   development: 2018-03-26T16:38:58-04:00   1dd0931498e841b362f36c8354670f41
 sections/homepage-product-selection.liquid:
   development: 2018-03-22T15:57:34-04:00   62c99b611eb8163fd62cc251b7d8d0a3
+sections/homepage-reviews.liquid:
+  development: 2018-03-26T22:52:51-04:00   cad9ae900b353ccec334a9290174b0e0
 sections/homepage-video.liquid:
   development: 2018-03-26T11:46:49-04:00   33651059ecb45a796aa4312119c83cd9
 sections/page-cart.liquid:
@@ -112,7 +116,7 @@ snippets/has-dropdown.liquid:
 snippets/home-section-title.liquid:
   development: 2018-03-21T09:41:51-04:00   aff9e5dc0f8741e81c659f11ffd43856
 snippets/icons.liquid:
-  development: 2018-03-26T11:36:24-04:00   594ef823f1098c5b31b80e9295a817c0
+  development: 2018-03-26T22:51:44-04:00   7bc81e679250c737f3ffaab2340ebbc1
 snippets/mega-navigation.liquid:
   development: 2018-03-21T09:41:51-04:00   b6bf23418fa6d709af8691446064f089
 snippets/page-header.liquid:

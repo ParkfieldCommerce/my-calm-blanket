@@ -1,0 +1,68 @@
+<div class="container m Reviews__container">
+  <div class="Reviews js-Reviews">
+    {% for block in section.blocks %}
+    <div class="Review">
+      <h3 class="Review__title">{{block.settings.title}}</h3>
+      <p class="Review__body">{{block.settings.body}}</p>
+      <span class="Review__name">-{{block.settings.name}}</span>
+      <div class="Review__stars">
+        {% include 'icons' with icon:'star' %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- <script>
+  $(document).ready(function(){
+    $('.js-Reviews').slick({
+      slidesToShow: 1
+    });
+  })
+</script> -->
+{% schema %}
+  {
+    "name": "Reviews",
+    "class": "homepage-reviews",
+    "settings":[
+      {
+        "id":"button_text",
+        "type":"text",
+        "label":"Button Text"
+      },
+      {
+        "id":"button_url",
+        "type":"url",
+        "label":"Button URL"
+      }
+    ],
+    "blocks":[
+      {
+        "name":"Review",
+        "type":"review",
+        "settings":[
+          {
+            "type":"text",
+            "id":"title",
+            "label":"Heading"
+          },
+          {
+            "type":"textarea",
+            "id":"body",
+            "label":"Body"
+          },
+          {
+            "type":"text",
+            "id":"name",
+            "label":"Name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Reviews",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,2 +1,0 @@
-CartJS.init({{ cart | json }});
-
