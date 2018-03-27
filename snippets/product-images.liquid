@@ -1,5 +1,5 @@
 {% if product.images.size > 0 %}
-  <div class="product-images clearfix">
+  <div class="ProductPage__images product-images clearfix">
     <div class="product-main-image {% if section.settings.enable_zoom %}zoom-active{% endif %}">
       {% assign mainImage = variant.featured_image | default: product.featured_image %}
 

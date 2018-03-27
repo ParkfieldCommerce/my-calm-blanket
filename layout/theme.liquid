@@ -72,8 +72,8 @@
   {% section 'promobar' %}
   {% section 'header' %}
   </div>
-  <div class="main-content-wrapper">
-    {% unless template contains 'index' %}
+  <div class="main-content-wrapper {{template.name}}">
+    {% unless template contains 'index' or template contains 'product' or template contains 'cart' %}
       <div class="page-header">
         {% include 'page-header' %}
       </div>

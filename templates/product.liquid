@@ -1,1 +1,44 @@
 {% section 'page-product' %}
+
+<script>
+  //Option Switching
+  $('.js-productQuickAddOption').change(function(){
+    $('.js-ProductQuickAddLabel').removeClass('ProductQuickAdd__label--active');
+    var variantId = $(this).val();
+    var price = $(this).data('price');
+    var comparePrice = $(this).data('compare-price');
+
+    $('.js-new-price').text('Now: ' + price);
+
+    if(comparePrice){
+      $('.js-old-price').text('Regular: ' + comparePrice);
+    }else{
+      $('.js-old-price').text('');
+    }
+
+    $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('ProductQuickAdd__label--active');
+  });
+
+  //Quantity Adjustment
+  $('.js-increment').click(function(){
+    var quantity = parseInt($('.js-quantity').val());
+    $('.js-quantity').val(quantity+1);
+  })
+
+  $('.js-decrement').click(function(){
+    var quantity = parseInt($('.js-quantity').val());
+    if(quantity > 1){
+      $('.js-quantity').val(quantity-1);
+    }
+  })
+  //Add to Cart Logic
+  $('.js-ProductQuickAdd__submit').click(function(){
+    var variantId = $('.js-productQuickAddOption:checked').val();
+    var quantity = $('.js-quantity').val();
+    CartJS.addItem(variantId, quantity, {}, {
+      "success": function(data, textStatus, jqXHR) {
+        window.location.href = '/cart';
+      }
+    });
+  });
+</script>

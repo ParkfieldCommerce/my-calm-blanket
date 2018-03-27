@@ -1183,3 +1183,58 @@ input[type="submit"].Footer__subscribe{
     text-align: center;
   }
 }
+
+
+/* Product Page */
+.main-content-wrapper.product{
+  width: 1440px;
+  padding: 0 8.3333%;
+  max-width: 100%;
+}
+
+.ProductPage__image-form{
+  @include flex();
+  flex-flow: row wrap;
+  @include justify-content(space-between);
+}
+
+.ProductPage__images{
+  width: 50%;
+}
+.ProductPage__form{
+  width: 40%;
+}
+.ProductQuickAdd__quantity-container{
+  @include flex();
+  width: 350px;
+  margin-bottom: 20px;
+}
+.ProductQuickAdd__quantity-label{
+  font-size: 1.4rem;
+  color: $body-color;
+}
+.ProductQuickAdd__quantity-adjust,
+input[type="number"].ProductQuickAdd__quantity-adjust{
+  border: 1px solid #C2C2C2;
+  height: 50px;
+  @include font-reg(1.8rem);
+  @include flex();
+  @include justify-content(center);
+  @include align-items(center);
+  text-align: center;
+  border-radius: 0;
+  color: $body-color;
+  flex: 1;
+  &:hover{
+    color: $body-color;
+  }
+  &:first-child{
+    border-right: none;
+  }
+  &:nth-child(2){
+    flex: 2;
+  }
+  &:last-child{
+    border-left: none;
+  }
+}
