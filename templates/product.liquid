@@ -3,20 +3,27 @@
 <script>
   //Option Switching
   $('.js-productQuickAddOption').change(function(){
-    $('.js-ProductQuickAddLabel').removeClass('ProductQuickAdd__label--active');
     var variantId = $(this).val();
     var price = $(this).data('price');
     var comparePrice = $(this).data('compare-price');
+    var available = $(this).data('available');
 
-    $('.js-new-price').text('Now: ' + price);
+    if(available){
+      $('.js-ProductQuickAddLabel').removeClass('ProductQuickAdd__label--active');
+      $('.js-ProductQuickAddLabel').removeClass('js-activeLabel');
+      $('.js-new-price').text(price);
 
-    if(comparePrice){
-      $('.js-old-price').text('Regular: ' + comparePrice);
+      if(comparePrice){
+        $('.js-old-price').text(comparePrice);
+      }else{
+        $('.js-old-price').text('');
+      }
+
+      $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('ProductQuickAdd__label--active');      
+      $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('js-activeLabel');      
     }else{
-      $('.js-old-price').text('');
+      $('.js-activeLabel').prev().prop('checked', true);
     }
-
-    $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('ProductQuickAdd__label--active');
   });
 
   //Quantity Adjustment
@@ -31,6 +38,7 @@
       $('.js-quantity').val(quantity-1);
     }
   })
+
   //Add to Cart Logic
   $('.js-ProductQuickAdd__submit').click(function(){
     var variantId = $('.js-productQuickAddOption:checked').val();
@@ -40,5 +48,12 @@
         window.location.href = '/cart';
       }
     });
+  });
+
+  //Weight Table Logic
+  $('.js-weight-select').click(function(e){
+    var variant = $(this).data('variant');
+    $('.js-productQuickAddOption[value="'+variant+'"]').trigger('click');
+    $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 </script>

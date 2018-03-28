@@ -15,8 +15,8 @@
       {% for variant in all_products[section.settings.product].variants %}
       <li class="ProductSelection__table-listing ProductSelection__table-listing--blanket">
         <div class="ProductSelection__table-listing__title">{{variant.title}}</div> 
-        <a class="ProductSelection__button Button Button--transparent" href="{{variant.url}}">
-          <span class="choose">Choose</span>
+        <a class="ProductSelection__button Button Button--transparent {% unless variant.available %}ProductSelection__button--unavailable js-productUnavailable{% endunless %}" href="{{variant.url}}">
+          <span class="choose">{% if variant.available %}Choose{% else %}Sold Out{% endif %}</span>
           <span class="variant-title">{{variant.title}}</span>
         </a>
       </li>
@@ -25,7 +25,11 @@
   </div>
 </div>
 </div>
-
+<script>
+  $('.js-productUnavailable').click(function(e){
+    e.preventDefault();
+  });
+</script>
 {% schema %}
   {
     "name": "Product Selection",

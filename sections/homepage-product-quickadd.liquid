@@ -10,15 +10,14 @@
       <p class="ProductQuickAdd__description">{{section.settings.text}}</p>
       <div class="ProductQuickAdd__variants">
         {% for variant in quickAddProduct.variants %}
-          {% if variant.available %}
           <input class="js-productQuickAddOption ProductQuickAdd__option" type="radio" id="ProductQuickAdd-{{variant.id}}" {% if forloop.first %}checked{% endif %} 
             name="ProductQuickAdd" 
             value="{{variant.id}}" 
             data-price="{{variant.price | money}}" 
             data-compare-price="{{variant.compare_at_price | money }}"
+            data-available="{{variant.available}}"
           >
-          <label for="ProductQuickAdd-{{variant.id}}" class="js-ProductQuickAddLabel ProductQuickAdd__label {% if forloop.first %}ProductQuickAdd__label--active{% endif %}">{{variant.title}}</label>
-          {% endif %}
+          <label for="ProductQuickAdd-{{variant.id}}" class="js-ProductQuickAddLabel ProductQuickAdd__label {% if forloop.first %}js-activeLabel ProductQuickAdd__label--active{% endif %} {% unless variant.available %}ProductQuickAdd__label--unavailable{% endunless %}">{{variant.title}}</label>
         {% endfor %}
       </div>
       <button class="ProductQuickAdd__submit Button Button--main js-ProductQuickAdd__submit">Add to cart</button>
@@ -34,20 +33,27 @@
 <script>
   //Option Switching
   $('.js-productQuickAddOption').change(function(){
-    $('.js-ProductQuickAddLabel').removeClass('ProductQuickAdd__label--active');
     var variantId = $(this).val();
     var price = $(this).data('price');
     var comparePrice = $(this).data('compare-price');
+    var available = $(this).data('available');
+    if(available){
+      $('.js-ProductQuickAddLabel').removeClass('ProductQuickAdd__label--active');
+      $('.js-ProductQuickAddLabel').removeClass('js-activeLabel');
 
-    $('.js-new-price').text('Now: ' + price);
+      $('.js-new-price').text('Now: ' + price);
 
-    if(comparePrice){
-      $('.js-old-price').text('Regular: ' + comparePrice);
+      if(comparePrice){
+        $('.js-old-price').text('Regular: ' + comparePrice);
+      }else{
+        $('.js-old-price').text('');
+      }
+
+      $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('ProductQuickAdd__label--active');
+      $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('js-activeLabel');
     }else{
-      $('.js-old-price').text('');
+      $('.js-activeLabel').prev().prop('checked', true);
     }
-
-    $('label[for="ProductQuickAdd-'+variantId+'"]').addClass('ProductQuickAdd__label--active');
   });
 
   //Add to Cart Logic

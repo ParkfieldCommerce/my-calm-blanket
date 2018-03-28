@@ -9,23 +9,25 @@
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product | img_url: 'grande' }}">
   
-  <h2 class="ProductQuickAdd__title">{{product.title}}</h2>
+  <h2 class="ProductQuickAdd__title ProductQuickAdd__title--productpage">{{product.title}}</h2>
   <div class="ProductQuickAdd__prices">
-    <span class="js-new-price ProductQuickAdd__new-price">Now: {{product.selected_or_first_available_variant.price | money}}</span>
-    <span class="js-old-price ProductQuickAdd__old-price">{% if product.selected_or_first_available_variant.compare_at_price != blank %}Regular {{product.selected_or_first_available_variant.compare_at_price | money}}{% endif %}</span>
+    <span class="js-new-price ProductQuickAdd__new-price ProductQuickAdd__new-price--productpage">{{product.selected_or_first_available_variant.price | money}}</span>
+    <span class="js-old-price ProductQuickAdd__old-price ProductQuickAdd__old-price--productpage">{% if product.selected_or_first_available_variant.compare_at_price != blank %}{{product.selected_or_first_available_variant.compare_at_price | money}}{% endif %}</span>
   </div>
   <p class="ProductQuickAdd__description">Choose weight:</p>
   <div class="ProductQuickAdd__variants">
     {% for variant in product.variants %}
-      {% if variant.available %}
       <input class="js-productQuickAddOption ProductQuickAdd__option" type="radio" id="ProductQuickAdd-{{variant.id}}" {% if forloop.first %}checked{% endif %} 
         name="ProductQuickAdd" 
         value="{{variant.id}}" 
         data-price="{{variant.price | money}}" 
         data-compare-price="{{variant.compare_at_price | money }}"
+        data-available="{{variant.available}}"
       >
-      <label for="ProductQuickAdd-{{variant.id}}" class="js-ProductQuickAddLabel ProductQuickAdd__label {% if forloop.first %}ProductQuickAdd__label--active{% endif %}">{{variant.title}}</label>
-      {% endif %}
+      <label 
+        for="ProductQuickAdd-{{variant.id}}" 
+        class="js-ProductQuickAddLabel ProductQuickAdd__label 
+          {% if product.selected_or_first_available_variant.id == variant.id %}ProductQuickAdd__label--active js-activeLabel{% endif %}{% unless variant.available %}ProductQuickAdd__label--unavailable{% endunless %}">{{variant.title}}</label>
     {% endfor %}
   </div>
   <div class="ProductQuickAdd__quantity">
@@ -36,7 +38,7 @@
       <button class="ProductQuickAdd__quantity-adjust js-increment">+</button>
     </div>
   </div>
-  <button class="ProductQuickAdd__submit Button Button--main js-ProductQuickAdd__submit">Add to cart</button>
+  <button class="ProductQuickAdd__submit ProductQuickAdd__submit--productpage Button Button--main js-ProductQuickAdd__submit">Add to cart</button>
 
     {% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
     {% include 'product-json', id: product.id, add_to_cart_text: add_to_cart_text, enable_history: true %}

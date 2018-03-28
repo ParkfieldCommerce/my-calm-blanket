@@ -4,7 +4,7 @@ assets/Star.png:
 assets/app.js:
   development: 2018-03-26T12:42:59-04:00
 assets/app.scss:
-  development: 2018-03-27T16:13:53-04:00   d3b0ec186d56643b00f84d2a7b45e81b
+  development: 2018-03-28T16:53:39-04:00   42f0d472dcbb677ccc7001cebb439b65
 assets/crimson-bold-webfont.eot:
   development: 2018-03-21T09:41:47-04:00   87728e4677fcdcf3ab878bbbabf84579
 assets/crimson-bold-webfont.woff:
@@ -80,9 +80,9 @@ sections/homepage-info-banner.liquid:
 sections/homepage-instagram.liquid:
   development: 2018-03-27T11:01:18-04:00   6f328ec3c3db5a4f71c9909877664e43
 sections/homepage-product-quickadd.liquid:
-  development: 2018-03-26T16:38:58-04:00   1dd0931498e841b362f36c8354670f41
+  development: 2018-03-28T13:50:54-04:00   90ffcbc4f4e0e8e236c68423a35c2e18
 sections/homepage-product-selection.liquid:
-  development: 2018-03-22T15:57:34-04:00   62c99b611eb8163fd62cc251b7d8d0a3
+  development: 2018-03-28T10:44:03-04:00   2070c86501f72b6ed3c5a54ef29cd1b3
 sections/homepage-reviews.liquid:
   development: 2018-03-27T10:12:44-04:00   0e4363f55deb3b7296231056ed23dc0b
 sections/homepage-video.liquid:
@@ -94,7 +94,7 @@ sections/page-collection.liquid:
 sections/page-collections-list.liquid:
   development: 2018-03-21T09:41:46-04:00   e9fcab936fc74ff28b7354797737fad9
 sections/page-product.liquid:
-  development: 2018-03-27T16:41:58-04:00   439dbcec35050f6d07680d1f2f72ad70
+  development: 2018-03-28T16:35:48-04:00   4a816fd7c5615a061facd5b4e4b8b96f
 sections/promobar.liquid:
   development: 2018-03-21T22:09:07-04:00   2b048042a03dfd64d8260471f58031d7
 snippets/article-list-item.liquid:
@@ -138,9 +138,9 @@ snippets/payment-icons.liquid:
 snippets/placeholder_svg_uri.liquid:
   development: 2018-03-21T09:41:51-04:00   b27af0d8f216ec06ec31a4ca38bd99ef
 snippets/product-description.liquid:
-  development: 2018-03-21T09:41:51-04:00   8b1b2696fe387ec839bc9b38c8f66e7d
+  development: 2018-03-28T16:56:09-04:00   fedf367baadd619b8fba5ad205e6a01e
 snippets/product-form.liquid:
-  development: 2018-03-27T16:13:35-04:00   c3bddfe79df031ada9d0934284483d05
+  development: 2018-03-28T14:36:12-04:00   f086adaa1ed83888e6ce14a3b6c82164
 snippets/product-images.liquid:
   development: 2018-03-27T14:33:53-04:00   ffa03c889085798b1ed42788096807e3
 snippets/product-json.liquid:
@@ -152,7 +152,7 @@ snippets/product-list-item.liquid:
 snippets/product-options-dropdown.liquid:
   development: 2018-03-21T09:41:51-04:00   3485d259a7d7e39d51992d651b81b948
 snippets/product-weight-table.liquid:
-  development: 2018-03-27T16:42:26-04:00   7eee4e9a9bd6548981b114410531a309
+  development: 2018-03-28T15:28:41-04:00   b0cb100500f134154b6553603d73af5d
 snippets/respond.liquid:
   development: 2018-03-21T09:41:51-04:00   86c117006484ab9d239aa03c018dff92
 snippets/share-buttons.liquid:
@@ -202,6 +202,6 @@ templates/page.liquid:
 templates/password.liquid:
   development: 2018-03-21T09:41:52-04:00   85635049d4e7a7b2777bf9847e7a0f47
 templates/product.liquid:
-  development: 2018-03-27T16:11:19-04:00   b80636153341ae13d17ca4b534c80225
+  development: 2018-03-28T14:55:17-04:00   1bb96aabac41f6a42b0f584547115fa5
 templates/search.liquid:
   development: 2018-03-21T09:41:53-04:00   f3773593d238f9742a3bb4f18045d08b

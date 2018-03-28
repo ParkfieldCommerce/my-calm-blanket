@@ -1,5 +1,33 @@
-{% if product.description != blank %}
-  <div class="product-description rte" itemprop="description">
-    {{ product.description }}
+<div class="ProductDescription__container">
+  <div class="ProductTabs__container">
+    <div class="ProductTabs">
+      <button class="ProductTab ProductTab--active" data-tab="1">
+        <span class="ProductTab__heading">Description</span>
+      </button>
+      {% assign tabCount = 1 %}
+      {% for block in section.blocks %}
+      {% if block.type == 'tab' %}
+      <button class="ProductTab" data-tab="{{tabCount | plus: 1}}">
+        <span class="ProductTab__heading">{{block.settings.title}}</span>
+      </button>
+      {% assign tabCount = tabCount | plus: 1 %}
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    {% assign tabCount = 1 %}
+    <div class="ProductTab__content ProductTab__content--active" data-tab="1">{{product.description}}</div>
+    {% for block in section.blocks %}
+    {% if block.type == 'tab' %}
+    <div class="ProductTab__content" data-tab="{{tabCount | plus: 1}}">{{block.settings.body}}</div>
+    {% assign tabCount = tabCount | plus: 1 %}
+    {% endif %}
+    {% endfor %}
   </div>
-{% endif %}
+  <div class="ProductBenefits">
+    <div class="ProductBenefits__benefit">
+      <div class="ProductBenefits__check"></div>
+      <div class="ProductBenefits__body"></div>
+    </div>
+  </div>
+</div>

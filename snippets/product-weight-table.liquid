@@ -1,5 +1,5 @@
-<div class="ProductSelection ProductSelection">
-  <h2 class="ProductSelection__heading">Choosing a weight</h2>
+<div class="ProductSelection">
+  <h2 class="ProductSelection__heading ProductSelection__heading--productpage">Choosing a weight</h2>
   <p class="ProductSelection__body">Designed to be ~10% of your body weight</p>
   <div class="ProductSelection__table">
     <ul class="ProductSelection__body-weights">
@@ -15,10 +15,10 @@
       {% for variant in product.variants %}
       <li class="ProductSelection__table-listing ProductSelection__table-listing--blanket">
         <div class="ProductSelection__table-listing__title">{{variant.title}}</div> 
-        <a class="ProductSelection__button Button Button--transparent js-weight-select" href="{{variant.url}}">
-          <span class="choose">Choose</span>
+        <button data-variant="{{variant.id}}" class="ProductSelection__button Button Button--transparent js-weight-select {% unless variant.available %}ProductSelection__button--unavailable js-productUnavailable{% endunless %}">
+          <span class="choose">{% if variant.available %}Choose{% else %}Sold Out{% endif %}</span>
           <span class="variant-title">{{variant.title}}</span>
-        </a>
+        </button>
       </li>
       {% endfor %}
     </ul>
