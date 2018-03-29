@@ -1,5 +1,4 @@
 <div data-section-id="{{ section.id }}" data-section-type="page-product">
-
   {% assign productTextStyle = settings.product_text_style %}
   {% assign productImageFlip = settings.product_image_flip %}
   {% assign enableRelatedProducts = section.settings.enable_related_products %}
@@ -9,14 +8,17 @@
 
   {% assign variant = product.selected_or_first_available_variant %}
   {% assign columns = 'two-column' %}
-
-  <div class="ProductPage__image-form product-wrap clearfix" itemscope itemtype="http://schema.org/Product">
-    {% include 'product-images' %}
-    {% include 'product-form' %}
+  <div class="ProductPage__wrapper">
+    <div class="ProductPage__image-form product-wrap clearfix" itemscope itemtype="http://schema.org/Product">
+      {% include 'product-images' %}
+      {% include 'product-form' %}
+      {% include 'share-buttons' %}
+    </div>
   </div>
+  <div class="ProductPage__wrapper">
     {% include 'product-weight-table' %}
-    {% include 'product-description' %}
-    {% include 'share-buttons' %}
+  </div>
+  {% include 'product-description' %}
   <script>
     window.settingsJSON = {{ settings | json }};
     window.productJSON = {{ product | json }};
@@ -86,6 +88,17 @@
           "type":"richtext",
           "label":"Tab Body",
           "id":"body"
+        }
+      ]
+    },
+    {
+      "type":"benefit",
+      "name":"Benefit",
+      "settings":[
+        {
+          "type":"textarea",
+          "label":"Benefit Description",
+          "id":"text"
         }
       ]
     }

@@ -56,4 +56,15 @@
     $('.js-productQuickAddOption[value="'+variant+'"]').trigger('click');
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
+
+  //Product Description Tabs
+  $('.js-tab').click(function(){
+    var index = $(this).data('tab');
+    //Make Tab Active
+    $('.ProductTab').removeClass('ProductTab--active');
+    $(this).addClass('ProductTab--active');
+    //Make Tab Content Active
+    $('.js-tabContent').removeClass('ProductTab__content--active');
+    $('.ProductTab__content[data-tab="'+index+'"]').addClass('ProductTab__content--active');
+  });
 </script>

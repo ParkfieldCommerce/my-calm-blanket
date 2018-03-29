@@ -4,7 +4,7 @@ assets/Star.png:
 assets/app.js:
   development: 2018-03-26T12:42:59-04:00
 assets/app.scss:
-  development: 2018-03-28T16:53:39-04:00   42f0d472dcbb677ccc7001cebb439b65
+  development: 2018-03-29T16:49:28-04:00   b21e29eef930b7fe964b237a9839bef2
 assets/crimson-bold-webfont.eot:
   development: 2018-03-21T09:41:47-04:00   87728e4677fcdcf3ab878bbbabf84579
 assets/crimson-bold-webfont.woff:
@@ -94,7 +94,7 @@ sections/page-collection.liquid:
 sections/page-collections-list.liquid:
   development: 2018-03-21T09:41:46-04:00   e9fcab936fc74ff28b7354797737fad9
 sections/page-product.liquid:
-  development: 2018-03-28T16:35:48-04:00   4a816fd7c5615a061facd5b4e4b8b96f
+  development: 2018-03-29T10:01:34-04:00   30888477cc75421d3cef03c9edfcf752
 sections/promobar.liquid:
   development: 2018-03-21T22:09:07-04:00   2b048042a03dfd64d8260471f58031d7
 snippets/article-list-item.liquid:
@@ -126,7 +126,7 @@ snippets/has-dropdown.liquid:
 snippets/home-section-title.liquid:
   development: 2018-03-21T09:41:51-04:00   aff9e5dc0f8741e81c659f11ffd43856
 snippets/icons.liquid:
-  development: 2018-03-26T22:51:44-04:00   7bc81e679250c737f3ffaab2340ebbc1
+  development: 2018-03-29T16:44:22-04:00   c9f1792efe9b5f1d225faea1ae1f1713
 snippets/mega-navigation.liquid:
   development: 2018-03-21T09:41:51-04:00   b6bf23418fa6d709af8691446064f089
 snippets/page-header.liquid:
@@ -138,7 +138,7 @@ snippets/payment-icons.liquid:
 snippets/placeholder_svg_uri.liquid:
   development: 2018-03-21T09:41:51-04:00   b27af0d8f216ec06ec31a4ca38bd99ef
 snippets/product-description.liquid:
-  development: 2018-03-28T16:56:09-04:00   fedf367baadd619b8fba5ad205e6a01e
+  development: 2018-03-29T16:48:50-04:00   03446f6ae6dd34f3da52fbd809892f14
 snippets/product-form.liquid:
   development: 2018-03-28T14:36:12-04:00   f086adaa1ed83888e6ce14a3b6c82164
 snippets/product-images.liquid:
@@ -202,6 +202,6 @@ templates/page.liquid:
 templates/password.liquid:
   development: 2018-03-21T09:41:52-04:00   85635049d4e7a7b2777bf9847e7a0f47
 templates/product.liquid:
-  development: 2018-03-28T14:55:17-04:00   1bb96aabac41f6a42b0f584547115fa5
+  development: 2018-03-29T09:15:42-04:00   ca9ed28c3db74e3bd464f79d4f9d5f9b
 templates/search.liquid:
   development: 2018-03-21T09:41:53-04:00   f3773593d238f9742a3bb4f18045d08b
