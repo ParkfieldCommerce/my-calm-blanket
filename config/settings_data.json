@@ -36,16 +36,12 @@
     "button-font-small-caps": true,
     "product_text_style": "overlay",
     "product_image_flip": false,
-    "social-facebook-url": "",
-    "social-twitter-url": "",
-    "social-google-url": "",
-    "social-pinterest-url": "",
-    "social-instagram-url": "",
-    "social-kickstarter-url": "",
-    "social-vimeo-url": "",
-    "social-youtube-url": "",
+    "social-facebook-url": "https:\/\/www.facebook.com\/shopify",
+    "social-twitter-url": "https:\/\/twitter.com\/shopify",
+    "social-google-url": "https:\/\/plus.google.com\/+shopify",
+    "social-pinterest-url": "https:\/\/www.pinterest.com\/shopify",
+    "social-instagram-url": "https:\/\/instagram.com\/shopify",
     "social-email-address": "",
-    "social-rss-url": "",
     "product-show-share-buttons": true,
     "blog-show-share-buttons": true,
     "share-widget-facebook": true,
@@ -71,6 +67,10 @@
     "checkout_accent_color": "#1990c6",
     "checkout_button_color": "#1990c6",
     "checkout_error_color": "#ff6d6d",
+    "social-kickstarter-url": "https:\/\/www.kickstarter.com\/projects\/user\/project",
+    "social-vimeo-url": "",
+    "social-youtube-url": "",
+    "social-rss-url": "",
     "enable-sidebar": "all",
     "sidebar-link-list-1": "main-menu",
     "sidebar-link-list-2": "",
@@ -91,6 +91,9 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "logo": "shopify:\/\/shop_images\/image.png",
+          "footer-link-list-1": "footer",
+          "footer-link-list-2": "footer-2",
           "show-payment-options": true
         }
       },
@@ -273,6 +276,98 @@
           "button_text": "Read more reviews",
           "button_url": "shopify:\/\/collections\/all"
         }
+      },
+      "1522161273623": {
+        "type": "homepage-instagram",
+        "settings": {
+          "section_heading": "@mycalmblanket",
+          "heading_url": "https:\/\/www.instagram.com\/mycalmblanket\/",
+          "access_token": "407985947.d90570a.31c66862601d4baa97567f8566064195"
+        }
+      },
+      "page-product": {
+        "type": "page-product",
+        "blocks": {
+          "1522182790476": {
+            "type": "weights",
+            "settings": {
+              "title": "85-109 lbs"
+            }
+          },
+          "1522182818115": {
+            "type": "weights",
+            "settings": {
+              "title": "110-170 lbs"
+            }
+          },
+          "1522182825033": {
+            "type": "weights",
+            "settings": {
+              "title": "171-230 lbs"
+            }
+          },
+          "1522182832513": {
+            "type": "weights",
+            "settings": {
+              "title": "230+ lbs"
+            }
+          },
+          "1522269253265": {
+            "type": "tab",
+            "settings": {
+              "title": "Inner Blanket",
+              "body": "<p>Our inner blankets are made of&nbsp;<strong>breathable cotton<\/strong>&nbsp;is fully washable. Our&nbsp;<strong>Ultra-Premium, Luxury&nbsp;Design<\/strong>, and&nbsp;<strong>Precision Computer Programmed<\/strong>&nbsp;sewing method mean each blanket is made to perfection unlike many of the hand-sewn weighted blankets.<\/p>\n<p>Use this inner blanket on its own (<em>without cover<\/em>)&nbsp;in the warmer months as it is designed for&nbsp;<strong>weight<\/strong>, not warmth.<\/p>"
+            }
+          },
+          "1522269275653": {
+            "type": "tab",
+            "settings": {
+              "title": "Outer Cover",
+              "body": "<p>Our outer cover is created with the softest of&nbsp;<strong>ultra-plush minky<\/strong>. Minky is one of the&nbsp;comfiest materials on the market and is&nbsp;<strong>extremely durable<\/strong>&nbsp;so you know your blanket will last the test of time.&nbsp;<\/p>\n<p>Use this cover, over the inner blanket&nbsp;in the cooler months for&nbsp;<strong>comfy, cozy warmth<\/strong>.<\/p>\n<p>Our inner blankets are made of&nbsp;<strong>breathable cotton<\/strong>&nbsp;is fully washable. Our&nbsp;<strong>Ultra-Premium, Luxury&nbsp;Design<\/strong>, and&nbsp;<strong>Precision Computer Programmed<\/strong>&nbsp;sewing method mean each blanket is made to perfection unlike many of the hand-sewn weighted blankets.<\/p>\n<p>Use this inner blanket on its own (<em>without cover<\/em>)&nbsp;in the warmer months as it is designed for&nbsp;<strong>weight<\/strong>, not warmth.<\/p>"
+            }
+          },
+          "1522354153100": {
+            "type": "benefit",
+            "settings": {
+              "text": "DTPS promotes the production of Serotonin & Melatonin."
+            }
+          },
+          "1522354186220": {
+            "type": "benefit",
+            "settings": {
+              "text": "Proven to help with Anxiety, ADHD, Stress, Autism, SPD, and Insomnia"
+            }
+          },
+          "1522354194099": {
+            "type": "benefit",
+            "settings": {
+              "text": "Stays warm in the winter, keeps you cool in the summer"
+            }
+          },
+          "1522354201511": {
+            "type": "benefit",
+            "settings": {
+              "text": "Improved quality of rest"
+            }
+          }
+        },
+        "block_order": [
+          "1522182790476",
+          "1522182818115",
+          "1522182825033",
+          "1522182832513",
+          "1522269253265",
+          "1522269275653",
+          "1522354153100",
+          "1522354186220",
+          "1522354194099",
+          "1522354201511"
+        ],
+        "settings": {
+          "enable_zoom": true,
+          "enable_send_to_cart": true,
+          "product_column_layout": "two-column"
+        }
       }
     },
     "content_for_index": [
@@ -283,7 +378,8 @@
       "1522080503047",
       "1522097014067",
       "1522111122837",
-      "1522117910016"
+      "1522117910016",
+      "1522161273623"
     ]
   },
   "presets": {

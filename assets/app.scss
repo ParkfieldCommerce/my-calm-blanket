@@ -1310,6 +1310,26 @@ input[type="number"].ProductQuickAdd__quantity-adjust{
   }
   padding: 0;
 }
+@include maxQuery(900px){
+  .ProductPage__images,
+  .ProductPage__form{
+    width: 100%;
+  }
+  .ProductPage__form{
+    text-align: center;
+  }
+  .ProductQuickAdd__quantity{
+    text-align: left;
+  }
+  .ProductQuickAdd__quantity-container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ProductSelection__heading--productpage{
+    margin-top: 50px;
+  }
+}
+
 .ProductDescription__container{
   background-color: #FAFAFA;
   padding-top: 80px;
@@ -1318,6 +1338,7 @@ input[type="number"].ProductQuickAdd__quantity-adjust{
 .ProductDescription__content{
   @include flex();
   @include justify-content(space-between);
+  flex-flow: row wrap;
 }
 .ProductTabs__container{
   width: 50%;
@@ -1364,6 +1385,7 @@ input[type="number"].ProductQuickAdd__quantity-adjust{
 }
 .ProductBenefits__benefit{
   @include flex();
+  margin-bottom: 30px;
 }
 .ProductBenefits__check{
   position: relative;
@@ -1386,25 +1408,29 @@ input[type="number"].ProductQuickAdd__quantity-adjust{
   max-width: 100%;
   width: 350px;
 }
-@include maxQuery(900px){
-  .ProductPage__images,
-  .ProductPage__form{
+@include maxQuery(1000px){
+  .ProductDescription__container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .ProductBenefits, 
+  .ProductTabs__container{
     width: 100%;
   }
-  .ProductPage__form{
-    text-align: center;
-  }
-  .ProductQuickAdd__quantity{
-    text-align: left;
-  }
-  .ProductQuickAdd__quantity-container{
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .ProductSelection__heading--productpage{
+  .ProductBenefits{
     margin-top: 50px;
   }
+  .ProductBenefits__benefit{
+    margin-bottom: 20px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .ProductBenefits__body{
+    width: auto;
+  }
 }
+
 
 @include maxQuery($xs){
   .ProductPage__wrapper{
