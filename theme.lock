@@ -4,7 +4,7 @@ assets/Star.png:
 assets/app.js:
   development: 2018-03-26T12:42:59-04:00
 assets/app.scss:
-  development: 2018-04-02T09:12:08-04:00   eccdfe96ac8d9b63a31fe3d021b1711b
+  development: 2018-04-02T23:02:31-04:00   4741ca9ad8c1b324dbf8df4666c63616
 assets/crimson-bold-webfont.eot:
   development: 2018-03-21T09:41:47-04:00   87728e4677fcdcf3ab878bbbabf84579
 assets/crimson-bold-webfont.woff:
@@ -52,11 +52,11 @@ assets/respond.min.js:
 assets/right.png:
   development: 2018-03-27T09:29:31-04:00   7ec64687842f68f3017fdfc7e0b73b91
 assets/rivets-cart.js:
-  development: 2018-03-26T12:13:49-04:00   9ede65b0a8936ed6fa874593b94ca41b
+  development: 2018-04-02T10:37:09-04:00   9ede65b0a8936ed6fa874593b94ca41b
 assets/theme.js.liquid:
   development: 2018-03-21T09:41:50-04:00   80ab8d2af82074932f3e6b06ab094721
 assets/theme.scss.liquid:
-  development: 2018-03-27T14:34:54-04:00   b63996818546618c397bf5ed7712f953
+  development: 2018-04-02T13:34:41-04:00   35763f62e349fe9798b32f001afa8a0a
 config/settings_data.json:
   development: 2018-03-29T16:12:00-04:00   da79238d68f2e6a6d11eea85319b5015
 config/settings_schema.json:
@@ -88,7 +88,7 @@ sections/homepage-reviews.liquid:
 sections/homepage-video.liquid:
   development: 2018-03-26T11:46:49-04:00   33651059ecb45a796aa4312119c83cd9
 sections/page-cart.liquid:
-  development: 2018-03-21T09:41:46-04:00   fd932ef69c93ff434cb404340bd7068e
+  development: 2018-04-02T23:01:03-04:00   af0d5effa7d61b884a99892a89ded6e0
 sections/page-collection.liquid:
   development: 2018-03-21T09:41:46-04:00   6867a374a8a307f2ddfa7167e5a34088
 sections/page-collections-list.liquid:

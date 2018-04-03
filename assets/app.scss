@@ -213,6 +213,10 @@ $gutter: 10px;
   }
 }
 
+.fa-times-thin:before {
+  content: '\00d7';
+}
+
 /* Promobar */
 .Promobar{
   padding: 10px 0px;
@@ -1435,5 +1439,121 @@ input[type="number"].ProductQuickAdd__quantity-adjust{
 @include maxQuery($xs){
   .ProductPage__wrapper{
     padding: 0 4.5%;
+  }
+}
+
+/* Cart Page */
+.main-content-wrapper.cart{
+  padding: 0;
+}
+.cart-page{
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+.CartPage__cart{
+  font-size: 16px;
+  font-family: 'Open Sans';
+}
+.CartPage__cart-label{
+  @include font-reg(1.8rem);
+  color: $heading-color;
+  width: 20%;
+}
+.CartPage__column{
+  width: 20%;
+  margin-right: 10%;
+}
+.CartPage__column--first{
+  width: 50%;
+  margin-right: 10%;
+}
+.CartPage__column--last{
+  width: 10%;
+}
+.CartPage__heading{
+  margin-bottom: 60px;
+}
+.CartPage__cart-headings{
+  @include flex();
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding-bottom: 15px;
+}
+
+.CartItem{
+  margin-bottom: 45px;
+  @include flex();
+  @include align-items(center);
+  width: 100%;
+}
+.CartItem__info{
+  @include flex();
+  @include align-items(center);
+}
+.CartItem__remove{
+  font-size: 12px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+.CartItem__image{
+  margin-right: 30px;
+  img{
+    max-width: 100%;
+    width: 110px;
+  }
+}
+.CartItem__title{
+  a{font-size: 2.4rem;}
+}
+.CartItem__quantity{
+  @include flex();
+}
+.CartItem__total{
+  font-size: 2.4rem;
+  color: $body-color;
+}
+input[type="text"].CartItem__quantity-control{
+  font-size: 2rem;
+}
+.CartItem__quantity-control,
+input[type="text"].CartItem__quantity-control{
+  color: $body-color;
+  width: 33.333%;
+  text-align: center;
+  border: 1px solid #E6E6E6;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.CartItem__quantity-control:first-child{
+  border-right: none;
+}
+.CartItem__quantity-control:last-child{
+  border-left: none;
+}
+.CartSummary__price{
+  margin-bottom: 40px;
+  color: $body-color;
+  width: 100%;
+  @include flex();
+  @include justify-content(flex-end);
+  @include font-bold(2.4rem);
+}
+.CartSummary__checkout-button{
+  width: 100%;
+  margin-left: auto;
+}
+.CartSummary__checkout-button{
+  width: 40%;
+  text-align: right;
+  .cart-checkout-button{
+    max-width: 100%;
+    @include font-reg(1.8rem);
+    height: auto;
+    border-radius: 0;
+    text-transform: none;
+    width: 100%;
+    text-align: center;
   }
 }

@@ -1,105 +1,46 @@
-<div data-section-id="{{ section.id }}" data-section-type="page-cart">
-
+<div data-section-id="{{ section.id }}" data-section-type="page-cart" data-cart-view="data-cart-view" class="container m">
+  <h1 class="CartPage__heading">My Cart</h1>
   {%- assign shippingCalculatorDefaultCountry = section.settings.shipping_calculator_default_country | escape -%}
-
-  {% if cart.item_count > 0 %}
+  <div rv-if="cart.item_count | gt 0">
     <form action="/cart" method="post">
-      <table class="cart-items clean {% if settings.enable_currency_switcher %}no-ajax{% endif %}">
-        <thead>
-          <tr>
-            <th class="first">{{ 'general.general.product' | t }}</th>
-            <th>{{ 'general.general.price' | t }}</th>
-            <th>{{ 'general.general.quantity' | t }}</th>
-            <th class="last">{{ 'general.general.total' | t }}</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {% for item in cart.items %}
-            <tr class="cart-item variant-{{ item.variant.id }}" data-variant="{{ item.variant.id }}" data-title="{{ item.product.title }}" data-url="{{ item.product.url }}">
-              <td class="cart-item-product first">
-                <a class="cart-item-image" href="{{ item.product.url }}">
-                  <img alt="{{ item.image.alt | escape }}" src="{{ item | img_url: 'medium' }}">
-                </a>
-
-                <span class="cart-item-vendor vendor">
-                  <a href="{{ shop.url  }}/collections/vendors?q={{ item.vendor  }}">
-                    {{ item.vendor }}
-                  </a>
-                </span>
-
-                <span class="cart-item-title">
-                  {{ item.product.title | link_to: item.product.url }}
-                </span>
-
-                {% for option in item.variant.options %}
-                  {% unless option == 'Default Title' %}
-                    <span class="cart-item-option">{{ option }}</span>
-                  {% endunless %}
-                {% endfor %}
-
-                {% if item.properties %}
-                  <div class="cart-line-item-properties">
-                    {% for property in item.properties %}
-                      {% if property.last != blank %}
-                        <span class="cart-item-property">
-                          <strong>{{ property.first }}</strong>:
-
-                          {% if property.last contains "/uploads/" %}
-                            <span class="cart-item-property-value cart-item-upload" data-file="{{ property.last }}">
-                              {{ property.last | split: '/' | last }}
-                            </span>
-                          {% else %}
-                            <span class="cart-item-property-value">
-                              {{ property.last }}
-                            </span>
-                          {% endif %}
-                        </span>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                {% endif %}
-
-                {% if settings.enable_currency_switcher %}
-                  <a class="cart-item-remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">&#57360;</a>
-                {% endif %}
-              </td>
-              <td class="cart-item-price"><span class="money">{{ item.price | money }}</span></td>
-              <td class="cart-item-quantity" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}data-max="{{ item.variant.inventory_quantity }}"{% endunless %}>
-                <input class="cart-item-quantity-display" type="text" name="updates[]" value="{{ item.quantity }}" size="1">
-                <span class="cart-item-decrease">&#57365;</span><span class="cart-item-increase">&#57366;</span>
-              </td>
-              <td class="cart-item-total last"><span class="money">{{ item.quantity | times: item.price | money }}</span></td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-
-      {% if section.settings.cart_special_instructions or section.settings.cart_shipping_calculator %}
-        <div class="cart-tools">
-          {% if section.settings.cart_special_instructions %}
-            <div class="cart-instructions">
-              <p>{{ 'cart.special_instructions' | t }}</p>
-              <textarea name="note" rows="4">{{ cart.note }}</textarea>
-            </div>
-          {% endif %}
-
-          {% if section.settings.cart_shipping_calculator and cart.requires_shipping %}
-            {% include 'shipping-calculator' %}
-          {% endif %}
+      <div class="CartPage__cart">
+        <div class="CartPage__cart-headings">
+          <div class="CartPage__cart-label CartPage__column--first">{{ 'general.general.product' | t }}</div>
+          <div class="CartPage__cart-label CartPage__column">{{ 'general.general.quantity' | t }}</div>
+          <div class="CartPage__cart-label CartPage__column--last">{{ 'general.general.total' | t }}</div>
         </div>
-      {% endif %}
 
-      <div class="cart-checkout">
-        <p class="cart-price"><span class="money">{{ cart.total_price | money }}</span></p>
-        <p class="cart-message"><em>{{ 'cart.tax_and_shipping' | t }}</em></p>
-        {% if settings.enable_currency_switcher %}
-          <input type="submit" name="update" value="{{ 'cart.update' | t }}" class="secondary">
-          <input type="submit" name="checkout" value="{{ 'cart.submit' | t }}">
-        {% else %}
-          <a class="cart-checkout-button button" href="/checkout">{{ 'cart.submit' | t }}</a>
-        {% endif %}
+        <div class="CartItems">
+          <div rv-each-item="cart.items" class="CartItem">
+            <div class="CartItem__info CartPage__column--first">
+              <a class="CartItem__remove" rv-data-cart-remove="index | plus 1" data-cart-remove="1"><i class="fa fa-times-thin fa-2x" aria-hidden="true"></i></a>
+              <a class="CartItem__image" rv-href="item.url">
+                <img alt="{{ item.image.alt | escape }}" rv-src="item.image">
+              </a>
+              <div class="CartItem__title">
+                <a rv-href="item.url">{item.title}</a>
+              </div>
+            </div>
+            <div class="CartItem__quantity CartPage__column">
+              <span rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | minus 1" class="CartItem__quantity-control cart-item-decrease">&#57365;</span>
+              <input class="CartItem__quantity-control" type="text" name="updates[]" rv-value="item.quantity" size="1">
+              <span rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | plus 1" class="CartItem__quantity-control cart-item-increase">&#57366;</span>
+            </div>
+            <div class="CartItem__total CartPage__column--last">
+              <div class="money" rv-html="item.line_price | money"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="CartSummary">
+        <div class="CartSummary__price">
+          <div class="CartPage__column">{{ 'general.general.subtotal' | t }}</div>
+          <div class="CartPage__column--last money" rv-html="cart.total_price | money"></div>
+        </div>
+        <div class="CartSummary__checkout-button">
+          <a class="cart-checkout-button button Button Button--main" href="/checkout">{{ 'cart.submit' | t }}</a>
+        </div>
         {% if additional_checkout_buttons %}
           <div class="cart-additional-buttons">
             {{ content_for_additional_checkout_buttons }}
@@ -107,9 +48,10 @@
         {% endif %}
       </div>
     </form>
-  {% else %}
+  </div>
+  <div rv-if="cart.item_count | eq 0">
     <p class="cart-empty-message">{{ 'cart.empty' | t }}</p>
-  {% endif %}
+  </div>
 
   <script>
     window.sectionJSON = {{ section.settings | json }};
@@ -120,31 +62,9 @@
 {% schema %}
 {
   "name": "Cart page",
-  "class": "section-cart",
+  "class": "section-cart cart-page",
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "cart_special_instructions",
-      "label": "Enable order notes",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Shipping rate calculator"
-    },
-    {
-      "type": "checkbox",
-      "id": "cart_shipping_calculator",
-      "label": "Enable",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "shipping_calculator_default_country",
-      "label": "Default country",
-      "info": "If a customer is logged in, their default shipping address country will be selected.",
-      "default": "United States"
-    }
+
   ]
 }
 
