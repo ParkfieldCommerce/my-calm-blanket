@@ -25,18 +25,18 @@
 
 <header class="MobileHeader">
   <div class="MobileHeader__section MobileHeader__section--toggle">
-    <div class="MobileHeader__toggle">
+    <div class="MobileHeader__toggle js-MobileTrigger">
       <span class="line"></span>
     </div>
   </div>
   <div class="MobileHeader__section MobileHeader__section--logo">
-    <img src="{{section.settings.logo | img_url:'master'}}" alt="{{section.settings.logo.alt}}">
+    <a href="/"><img src="{{section.settings.logo | img_url:'master'}}" alt="{{section.settings.logo.alt}}"></a>
   </div>
   <div class="MobileHeader__section MobileHeader__section--account">
-    <span class="Header__account--cart">{% include 'icons' with icon:'cart' %}</span>
+    <a href="/cart" class="Header__account--cart">{% include 'icons' with icon:'cart' %}</a>
   </div>
 </header>
-<nav class="MobileNavigation">
+<nav class="MobileNavigation js-MobileNav">
   <ul class="MobileNavigation__links">
     {% for link in linklists['main-menu'].links %}
     <li class="MobileNavigation__link"><a href="{{link.url}}">{{link.title}}</a></li>
@@ -48,7 +48,24 @@
     <li class="MobileNavigation__link"><a href="/account/register">Register</a></li>
     {% endif %}
   </ul>
+  <div class="MobileNavigation__made-in">
+    <img src="{{section.settings.designed_image | img_url:'master'}}" alt="{{section.settings.designed_image.alt}}">
+    <p>{{section.settings.designed_text}}</p>
+  </div>
 </nav>
+<script>
+  $('.js-MobileTrigger').click(function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+      $('.js-MobileNav').hide();
+      $('body').removeClass('fixed');
+    }else{
+      $(this).addClass('active');
+      $('.js-MobileNav').show();
+      $('body').addClass('fixed');
+    }
+  });
+</script>
 {% schema %}
 {
   "name": "Header",

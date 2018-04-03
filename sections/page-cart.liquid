@@ -1,5 +1,5 @@
-<div data-section-id="{{ section.id }}" data-section-type="page-cart" data-cart-view="data-cart-view" class="container m">
-  <h1 class="CartPage__heading">My Cart</h1>
+<div data-section-id="{{ section.id }}" data-section-type="page-cart" data-cart-view="data-cart-view" rv-cloak class="container m">
+  <h1 class="CartPage__heading">{{ 'cart.title' | t }}</h1>
   {%- assign shippingCalculatorDefaultCountry = section.settings.shipping_calculator_default_country | escape -%}
   <div rv-if="cart.item_count | gt 0">
     <form action="/cart" method="post">
@@ -22,12 +22,16 @@
               </div>
             </div>
             <div class="CartItem__quantity CartPage__column">
+              <div class="CartItem__title CartItem__title--mobile">
+                <a rv-href="item.url">{item.title}</a>
+              </div>
               <span rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | minus 1" class="CartItem__quantity-control cart-item-decrease">&#57365;</span>
               <input class="CartItem__quantity-control" type="text" name="updates[]" rv-value="item.quantity" size="1">
               <span rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | plus 1" class="CartItem__quantity-control cart-item-increase">&#57366;</span>
             </div>
             <div class="CartItem__total CartPage__column--last">
               <div class="money" rv-html="item.line_price | money"></div>
+              <a class="CartItem__remove CartItem__remove--mobile" rv-data-cart-remove="index | plus 1" data-cart-remove="1"><i class="fa fa-times-thin fa-2x" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>

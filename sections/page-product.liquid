@@ -12,13 +12,17 @@
     <div class="ProductPage__image-form product-wrap clearfix" itemscope itemtype="http://schema.org/Product">
       {% include 'product-images' %}
       {% include 'product-form' %}
-      {% include 'share-buttons' %}
     </div>
   </div>
   <div class="ProductPage__wrapper">
     {% include 'product-weight-table' %}
   </div>
   {% include 'product-description' %}
+  <div class="ProductPage__wrapper">
+    <div class="ProductReviews__container">
+      <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+    </div>
+  </div>
   <script>
     window.settingsJSON = {{ settings | json }};
     window.productJSON = {{ product | json }};

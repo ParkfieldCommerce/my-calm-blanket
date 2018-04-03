@@ -108,7 +108,7 @@
     }
   },
   "cart": {
-    "title": "Cart",
+    "title": "My cart",
     "special_instructions": "Special instructions",
     "tax_and_shipping": "Taxes and shipping not included",
     "update": "Update",

@@ -2,7 +2,7 @@
 <div class="Promobar js-Promobar">
 <div class="container l">
   <p class="Promobar__text">{{section.settings.text}}</p>
-  <button class="Promobar__close">x</button>
+  <button class="js-closePromobar Promobar__close">x</button>
 </div>
 </div>
 <style>
@@ -11,6 +11,16 @@
     color: {{section.settings.text_color}};
   }
 </style>
+<script>
+  var closedPromobar = Cookies.get('promobar-closed');
+  if(closedPromobar){
+    $('.js-Promobar').addClass('hide');
+  }
+  $('.js-closePromobar').click(function(){
+    Cookies.set('promobar-closed', true, { expires: {{section.settings.expiration}} });
+    $('.js-Promobar').addClass('hide');
+  });
+</script>
 {% schema %}
   {
     "name": "Promobar",
@@ -39,6 +49,31 @@
         "id":"text_color",
         "label":"Text Color",
         "default":"#333E48"
+      },
+      {
+        "type":      "select",
+        "id":        "expiration",
+        "label":     "Re-show Promobar",
+        "options": [
+          {
+            "value": "1",
+            "label": "After 1 Day"
+          },
+          {
+            "value": "3",
+            "label": "After 3 Days"
+          },
+          {
+            "value": "7",
+            "label": "After a Week"
+          },
+          {
+            "value": "14",
+            "label": "After 2 Weeks"
+          }
+        ],
+        "info":"When is the next time they should see the promobar, after they close it",
+        "default":   "1"
       }
     ]
   }
